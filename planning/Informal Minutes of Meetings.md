@@ -52,11 +52,11 @@
 - How will the content be presented and how will our user navigate through it.
 
 - Visual elements, colour schemes. Any branding ideas.
-  *https://colorhunt.co/ for colour palettes.*
+  *HD selected possible colour palettes from https://colorhunt.co/*
 
 - React, Express and MongoDB are our primary technologies in our stack.
-- Additional libraries or frameworks to consider?
 
+- Additional libraries or frameworks to consider?
   - Possible animations of information with react libraries. Information flow onto screen.
   - API integration (NASA) for images on the planet pages.
 
@@ -85,19 +85,19 @@
   - Backend Routes
     - get for all
     - get for one.
-      For the create own planet
-    - post, delete (put for update as possible extension).
+    - For the create own planet:
+        - post, delete (put for update as possible extension).
 
 - Testing decisions. Time dependant.
 
-- Possible names: Planet Discovery / Planet Holmes /
+- Possible names: Planet Explorer / Planet Discovery / Planet Holmes /
 
 - If we had more time: https://openai.com/blog/dall-e-api-now-available-in-public-beta
 
 ### Dataflow sketch
 
 <!-- ![Brainstorming Scribbles on a page.](/images_planning_folder/ASHA_Brainstorming_1_June_2023.jpeg "Our Brainstorming") -->
-![dataflow sketch](/images_planning_folder//dataflow_sketch.jpg "dataflow sketch")
+![dataflow sketch](/images_planning_folder/dataflow_sketch.jpg "dataflow sketch")
 <!-- <img src="images_planning_folder/dataflow_sketch.jpeg" alt="dataflow sketch" width="90%" height="50%"> -->
 
 
