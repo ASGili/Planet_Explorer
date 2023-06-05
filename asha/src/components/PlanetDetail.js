@@ -1,14 +1,18 @@
 import { useEffect, require } from "react";
 import { useParams } from "react-router-dom";
+import getPlanetImg from "../utils";
 
 const PlanetDetail = ({ onePlanet, getOnePlanet }) => {
   const { planetId } = useParams();
 
   useEffect(() => {
     // console.log(planetId)
-    getOnePlanet(planetId);
-    // console.log(planetId)
+    if (onePlanet) {
+      console.log(onePlanet)
+      getOnePlanet(planetId);
+    }
   }, [planetId]);
+
 
   // useEffect(() => {
   //     onPlanetIdChange(planetId); // Call the callback function with the planetId
@@ -22,8 +26,9 @@ const PlanetDetail = ({ onePlanet, getOnePlanet }) => {
   return (
     <>
       <h1>{onePlanet.Planet}</h1>
-      {/* <img src={require(`./assets/${onePlanet.Planet}.jpeg`)} /> */}
-      {console.log(`${onePlanet.Planet}.jpeg`)}
+      {/* <img src={require(`../assets/${onePlanet.Planet}.jpeg`)} /> */}
+      <img src={getPlanetImg(onePlanet.Planet)} />
+      {/* {console.log(`${onePlanet.Planet}.jpeg`)} */}
       {/* <img src={`${planetImages.items[0].links[0].href}`}/> */}
       {/* {console.log(planetImages.items[0].links[0].href)} */}
       <p>
