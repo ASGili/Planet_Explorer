@@ -40,7 +40,7 @@ const handleRings = (event) => {
 
             
         </ul>
-            <label className='q1'>1. What colour does your planet have?</label><br></br>
+            <label> 1. What colour does your planet have?</label><br></br>
         <select className='select' onChange={handleColour}>
             <option value="Default"> Choose Planet Colour</option>
             <option value="Blue">Blue</option>
