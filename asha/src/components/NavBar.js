@@ -1,12 +1,13 @@
+import { Link } from "react-router-dom"
 
 const NavBar = () => {
 
     return(
     <header>
         <ul>
-            <a href="/">Home</a>
-            <a href="/planets">Planet List</a>
-            <a href="/selector">Planet Selector</a>
+            <Link to="/">Home</Link>
+            <Link to="/planets">Planet List</Link>
+            <Link to="/selector">Planet Selector</Link>
         </ul>
     </header>
     )
