@@ -1,10 +1,14 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 const PlanetSelector = ({planets})=> {
     const [colour, setColour] = useState("")
 
+const filteredPlanets = planets.filter((planet) => {
+    planet.color.includes(colour) 
+
+})
+
 const handleColour = (event) => {
 setColour(event.target.value)
-
 }
 
     return (
