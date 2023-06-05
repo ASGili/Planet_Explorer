@@ -23,7 +23,8 @@ setColour(event.target.value)
 }
 
 const handleRings = (event) => {
-    
+    console.log(event.target.value)
+    setRingsValue(event.target.value)
 }
 
     return (
@@ -47,7 +48,7 @@ const handleRings = (event) => {
         </select> <br></br>
         <>
         <label>Does your planet have rings? </label><br />
-        <form onSelect={handleRings}>
+        <form onChange={handleRings}>
         <input type="radio" name="rings" value="true" id="option1"></input>
         <label htmlFor="option1">Yes!</label>
 
