@@ -33,7 +33,12 @@ const handleRings = (event) => {
         <>
         <h2>Planet Selector</h2>
         <ul>
+            <li className='filteredPlanets'>
+            </li>
             {mappedPlanets}
+            <div className="planet"></div>
+
+            
         </ul>
             <label>What colour does your planet have?</label><br></br>
         <select onChange={handleColour}>
