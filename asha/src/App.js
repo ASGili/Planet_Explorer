@@ -19,7 +19,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomeInfo/>} />
         <Route path="/planets" element={<PlanetList planets={planets}/>} />
-        <Route path="/selector" element={<PlanetSelector/>} />
+        <Route path="/selector" element={<PlanetSelector planets={ planets } />} />
       </Routes>
     </Router>
   );
