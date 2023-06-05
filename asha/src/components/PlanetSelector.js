@@ -37,6 +37,7 @@ const handleRings = (event) => {
         </ul>
             <label>What colour does your planet have?</label><br></br>
         <select onChange={handleColour}>
+            <option value="Default"> Choose Planet Colour</option>
             <option value="Blue">Blue</option>
             <option value="Grey">Grey</option>
             <option value="Brown">Brown</option>
