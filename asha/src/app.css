@@ -13,10 +13,11 @@ ul {
     padding: 10px;
 }
 
-/* not sure how to reference the planet names in planet selector? */
-.filteredPlanets {
-    color: darkred;
-    font-size: larger;
+li {
+    color: aliceblue;
+    padding:10px;
+    font-size: 1.5em;
+    list-style: none;
 }
 
 body {
@@ -38,5 +39,5 @@ color: aliceblue;
     height: 100px;
     border-radius: 50%;
     background-color: #0A4D68;
-    /* Set the desired color */
+
 }
