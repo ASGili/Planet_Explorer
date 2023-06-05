@@ -2,7 +2,8 @@ import {useState, useEffect} from 'react'
 const PlanetSelector = ({planets})=> {
 
     const [colour, setColour] = useState("")
-
+    const [ringsValue, setRingsValue] = useState(null)
+    
 
 
 const filteredPlanets = planets.filter((planet) => {
@@ -19,6 +20,10 @@ const mappedPlanets = filteredPlanets.map((planet, index) => {
 
 const handleColour = (event) => {
 setColour(event.target.value)
+}
+
+const handleRings = (event) => {
+    
 }
 
     return (
@@ -41,13 +46,15 @@ setColour(event.target.value)
             <option value="Golden">Golden</option>
         </select> <br></br>
         <>
-        <label>Does your planet have rings? </label> <br></br>
+        <label>Does your planet have rings? </label><br />
+        <form onSelect={handleRings}>
         <input type="radio" name="rings" value="true" id="option1"></input>
-        <label for="option1">Yes!</label>
+        <label htmlFor="option1">Yes!</label>
 
     
         <input type="radio" name="rings" value="false" id="option2"></input>
-        <label for="option2">No!</label><br/>
+        <label htmlFor="option2">No!</label><br/>
+        </form>
 
         </>
         
