@@ -13,6 +13,7 @@ function App() {
 
   const [planets, setPlanets] = useState([])
   const [onePlanet, setOnePlanet] = useState([])
+  const [planetImages, setPlanetImages] = useState([])
 
   useEffect(()=> {
     PlanetService.getPlanets().then((allPlanets) => {
@@ -20,11 +21,25 @@ function App() {
     })
   },[])
 
+    useEffect (() => {
+      const lowerCasePlanet = onePlanet.Planet
+        // console.log(typeof lowerCasePlanet)
+        getImageNASA(lowerCasePlanet)
+    },[onePlanet])
+
   const getOnePlanet = (planetId) => {
     // console.log(planetId)
     PlanetService.getPlanet(planetId)
     .then(chosenPlanet => setOnePlanet(chosenPlanet))
   }
+
+  const getImageNASA = (planet) => {
+    const url = `https://images-api.nasa.gov/search?q=${planet}`
+    fetch(url)
+      .then(res => res.json())
+      .then(planetImg => setPlanetImages(planetImg.collection))
+      // console.log(planetImg)
+}
 
   return (
     <Router>
@@ -33,7 +48,7 @@ function App() {
         <Route path="/" element={<HomeInfo/>} />
         <Route path="/planets" element={<PlanetList planets={planets}/>} />
         <Route path="/selector" element={<PlanetSelector/>} />
-        <Route path="/planets/:planetId" element={<PlanetDetail onePlanet={onePlanet} getOnePlanet={getOnePlanet} />} />
+        <Route path="/planets/:planetId" element={<PlanetDetail onePlanet={onePlanet} getOnePlanet={getOnePlanet} planetImages={planetImages} getImageNASA={getImageNASA} />} />
       </Routes>
     </Router>
   );
