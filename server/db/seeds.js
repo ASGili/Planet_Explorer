@@ -6,7 +6,7 @@ db.planets.insertMany(
 [
  {
    "Planet": "Mercury",
-   "Color": ["Grey"],
+   "Color": ["Default", "Grey"],
    "Mass10e24kg": 0.33,
    "Diameterkm": 4879,
    "Densitykgme3": 5429,
@@ -30,7 +30,7 @@ db.planets.insertMany(
 },
  {
    "Planet": "Venus",
-   "Color": ["Brown", "Grey"],
+   "Color": ["Default","Brown", "Grey"],
    "Mass10e24kg": 4.87,
    "Diameterkm": 12104,
    "Densitykgme3": 5243,
@@ -54,7 +54,7 @@ db.planets.insertMany(
 },
  {
    "Planet": "Earth",
-   "Color": ["Blue", "Brown", "Green", "White"],
+   "Color": ["Default", "Blue", "Brown", "Green", "White"],
    "Mass10e24kg": 5.97,
    "Diameterkm": 12756,
    "Densitykgme3": 5514,
@@ -78,7 +78,7 @@ db.planets.insertMany(
 },
  {
    "Planet": "Mars",
-   "Color": ["Red", "Brown", "Tan"],
+   "Color": ["Default", "Red", "Brown", "Tan"],
    "Mass10e24kg": 0.642,
    "Diameterkm": 6792,
    "Densitykgme3": 3934,
@@ -102,7 +102,7 @@ db.planets.insertMany(
 },
  {
    "Planet": "Jupiter",
-   "Color": ["Brown", "Orange", "Tan", "White"],
+   "Color": ["Default", "Brown", "Orange", "Tan", "White"],
    "Mass10e24kg": 1898,
    "Diameterkm": 142984,
    "Densitykgme3": 1326,
@@ -126,7 +126,7 @@ db.planets.insertMany(
 },
  {
    "Planet": "Saturn",
-   "Color": ["Golden", "Brown", "Blue", "Grey"],
+   "Color": ["Default", "Golden", "Brown", "Blue", "Grey"],
    "Mass10e24kg": 568,
    "Diameterkm": 120536,
    "Densitykgme3": 687,
@@ -150,7 +150,7 @@ db.planets.insertMany(
 },
  {
    "Planet": "Uranus",
-   "Color": ["Blue", "Green"],
+   "Color": ["Default", "Blue", "Green"],
    "Mass10e24kg": 86.8,
    "Diameterkm": 51118,
    "Densitykgme3": 1270,
@@ -174,7 +174,7 @@ db.planets.insertMany(
 },
  {
    "Planet": "Neptune",
-   "Color": ["Blue"],
+   "Color": ["Default", "Blue"],
    "Mass10e24kg": 102,
    "Diameterkm": 49528,
    "Densitykgme3": 1638,

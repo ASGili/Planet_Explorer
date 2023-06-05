@@ -1,18 +1,17 @@
 import {useState, useEffect} from 'react'
 const PlanetSelector = ({planets})=> {
 
-    const [colour, setColour] = useState("")
+    const [colour, setColour] = useState("Default")
     const [ringsValue, setRingsValue] = useState(null)
     
 
-
+// with filter, it needs to be true to put into the array (filteredPlanets)
 const filteredPlanets = planets.filter((planet) => {
     return(
     planet.Color.includes(colour)
     &&
-    planet.RingSystem.toString() == ringsValue
-    )
-})
+    (ringsValue === null || planet.RingSystem.toString() == ringsValue)
+)})
 
 const mappedPlanets = filteredPlanets.map((planet, index) => {
     return(
