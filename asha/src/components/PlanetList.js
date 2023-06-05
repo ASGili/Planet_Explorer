@@ -1,7 +1,13 @@
-const PlanetList = ({planets})=>{
-//  removed from line 3. <li className="planet">{planet.name}</li>
-    const planetList = planets.map((planet)=> <li className="planet">{planet.Planet}</li>)
+import IndividualPlanet from "./IndividualPlanet"
 
+const PlanetList = ({planets})=>{
+
+    const planetList = planets.map((planet)=> {
+        return <IndividualPlanet 
+            key={planet._id}
+            planet={planet}
+        />
+    } )
 
     return (
         <>
