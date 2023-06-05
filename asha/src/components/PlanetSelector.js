@@ -11,21 +11,24 @@ const filteredPlanets = planets.filter((planet) => {
     )
 })
 
-const mappedPlanets = filteredPlanets.map((planet) => {
+const mappedPlanets = filteredPlanets.map((planet, index) => {
     return(
-    <li>{planet.Planet}</li>
+    <li key={index}>{planet.Planet}</li>
     )
 })
 
-console.log(mappedPlanets)
 const handleColour = (event) => {
 setColour(event.target.value)
-
 }
 
     return (
+        
         <>
         <h2>Planet Selector</h2>
+        <ul>
+            {mappedPlanets}
+        </ul>
+            <label>What colour does your planet have?</label><br></br>
         <select onChange={handleColour}>
             <option value="Blue">Blue</option>
             <option value="Grey">Grey</option>
@@ -36,12 +39,19 @@ setColour(event.target.value)
             <option value="Tan">Tan</option>
             <option value="Orange">Orange</option>
             <option value="Golden">Golden</option>
-        </select>
+        </select> <br></br>
+        <>
+        <label>Does your planet have rings? </label> <br></br>
+        <input type="radio" name="rings" value="true" id="option1"></input>
+        <label for="option1">Yes!</label>
+
+    
+        <input type="radio" name="rings" value="false" id="option2"></input>
+        <label for="option2">No!</label><br/>
+
+        </>
         
-        
-<ul>
-    {mappedPlanets}
-</ul>
+
         </>
     )
 }
