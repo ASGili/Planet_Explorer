@@ -1,6 +1,6 @@
 use planets_db;
 
-db.dropDatabase
+db.dropDatabase()
 
 db.planets.insertMany(
 [
