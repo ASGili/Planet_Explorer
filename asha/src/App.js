@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-// Angel was here
+import NavBar from "./components/NavBar";
+import HomeInfo from "./components/HomeInfo";
+import PlanetList from "./components/PlanetList";
+import PlanetSelector from "./components/PlanetSelector";
+import { useState, useEffect} from "react";
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import "./app.css";
+
 
 function App() {
+
+  const [planets, SetPlanets] = useState([])
+
+  // useEffect(()=>{},[])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+    <NavBar/>
+      <Routes>
+        <Route path="/" element={<HomeInfo/>} />
+        <Route path="/planets" element={<PlanetList planets={planets}/>} />
+        <Route path="/selector" element={<PlanetSelector/>} />
+      </Routes>
+    </Router>
   );
 }
 
