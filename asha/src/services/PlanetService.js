@@ -6,13 +6,13 @@ const PlanetService =  {
       .then(res => res.json());
   },
 
-  getPlanet(planet) {
-    return fetch(baseURL + planet._id, {
-        method: 'GET',
-        body: JSON.stringify(planet),
-        headers: {'Content-Type': 'application/json'}
+  getPlanet(id) {
+    return fetch(baseURL + id) 
+        // method: 'GET'
+        // body: JSON.stringify(id),
+        // headers: {'Content-Type': 'application/json'}
         .then(res => res.json())
-    })
+    
   }
 
 //   addPlanet(planet) {
