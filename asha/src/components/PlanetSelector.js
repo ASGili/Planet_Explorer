@@ -1,36 +1,47 @@
 import {useState, useEffect} from 'react'
 const PlanetSelector = ({planets})=> {
-    const [colour, setColour] = useState("red")
+
+    const [colour, setColour] = useState("")
 
 
 
 const filteredPlanets = planets.filter((planet) => {
-    planet.color.includes(colour) 
-
+    return(
+    planet.Color.includes(colour)
+    )
 })
 
+const mappedPlanets = filteredPlanets.map((planet) => {
+    return(
+    <li>{planet.Planet}</li>
+    )
+})
+
+console.log(mappedPlanets)
 const handleColour = (event) => {
 setColour(event.target.value)
-console.log(filteredPlanets)
+
 }
 
     return (
         <>
         <h2>Planet Selector</h2>
         <select onChange={handleColour}>
-            <option value="blue">Blue</option>
-            <option value="grey">grey</option>
-            <option value="brown">brown</option>
-            <option value="green">green</option>
-            <option value="white">white</option>
-            <option value="red">red</option>
-            <option value="tan">tan</option>
-            <option value="orange">orange</option>
-            <option value="golden">golden</option>
+            <option value="Blue">Blue</option>
+            <option value="Grey">Grey</option>
+            <option value="Brown">Brown</option>
+            <option value="Green">Green</option>
+            <option value="White">White</option>
+            <option value="Red">Red</option>
+            <option value="Tan">Tan</option>
+            <option value="Orange">Orange</option>
+            <option value="Golden">Golden</option>
         </select>
         
         
-
+<ul>
+    {mappedPlanets}
+</ul>
         </>
     )
 }
