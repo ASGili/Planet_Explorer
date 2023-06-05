@@ -4,7 +4,7 @@ import PlanetList from "./components/PlanetList";
 import PlanetSelector from "./components/PlanetSelector";
 import PlanetService from "./services/PlanetService";
 import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, useParams } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./app.css";
 import PlanetDetail from "./components/PlanetDetail";
 
@@ -40,13 +40,6 @@ function App() {
     // console.log(planetImg)
   };
 
-  // chatGPT suggestion for preventing useEffect running twice. Did not work.
-  // const handlePlanetIdChange = (planetId) => {
-  //   // Handle the planetId change in App.js
-  //   console.log("Selected Planet ID:", planetId);
-  //   // Call the functions that depend on the planetId here
-  //   getOnePlanet(planetId);
-  // };
 
   return (
     <Router>

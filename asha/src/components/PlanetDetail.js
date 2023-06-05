@@ -1,6 +1,7 @@
 import { useEffect, require } from "react";
 import { useParams } from "react-router-dom";
 import getPlanetImg from "../utils";
+import PlanetImageSlider from "./PlanetImageSlider";
 
 const PlanetDetail = ({ onePlanet, getOnePlanet, planetImages }) => {
   const { planetId } = useParams();
@@ -42,8 +43,9 @@ const PlanetDetail = ({ onePlanet, getOnePlanet, planetImages }) => {
         magna vel turpis fringilla blandit. Nam et turpis non quam hendrerit
         tincidunt et quis ante. Aenean sed est eu eros dapibus posuere.
       </p>
-      <img src={`${planetImages.items[0].links[0].href}`}/>
+      {/* <img src={`${planetImages.items[0].links[0].href}`}/> */}
       {/* <button onClick={handleOnClick}></button> */}
+      <PlanetImageSlider planetImages={planetImages} />
     </>
   );
 };
