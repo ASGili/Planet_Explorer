@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react'
-const PlanetSelector = ({planets})=> {
+const PlanetSelector = ({planets}) => {
 
     const [colour, setColour] = useState("Default")
     const [ringsValue, setRingsValue] = useState(null)
@@ -48,7 +48,7 @@ const handleRings = (event) => {
             <option value="Golden">Golden</option>
         </select> <br></br>
         <>
-        <label>Does your planet have rings? </label><br />
+        <label>Does your planet have rings? </label><br/>
         <form onChange={handleRings}>
         <input type="radio" name="rings" value="true" id="option1"></input>
         <label htmlFor="option1">Yes!</label>
