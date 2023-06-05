@@ -2,6 +2,7 @@ import NavBar from "./components/NavBar";
 import HomeInfo from "./components/HomeInfo";
 import PlanetList from "./components/PlanetList";
 import PlanetSelector from "./components/PlanetSelector";
+import PlanetService from "./services/PlanetService";
 import { useState, useEffect} from "react";
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import "./app.css";
@@ -9,9 +10,13 @@ import "./app.css";
 
 function App() {
 
-  const [planets, SetPlanets] = useState([])
+  const [planets, setPlanets] = useState([])
 
-  // useEffect(()=>{},[])
+  useEffect(()=> {
+    PlanetService.getPlanets().then((allPlanets) => {
+      setPlanets(allPlanets)
+    })
+  },[])
 
   return (
     <Router>

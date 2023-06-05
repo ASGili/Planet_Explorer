@@ -2,7 +2,7 @@ use planets_db;
 
 db.dropDatabase
 
-db.planets.insertMany
+db.planets.insertMany(
 [
  {
    "Planet": "Mercury",
@@ -196,5 +196,5 @@ db.planets.insertMany
    "RingSystem": true,
    "GlobalMagneticField": true
 }
-]
+])
 ;

@@ -1,6 +1,7 @@
 const PlanetList = ({planets})=>{
+//  removed from line 3. <li className="planet">{planet.name}</li>
+    const planetList = planets.map((planet)=> <li className="planet">{planet.Planet}</li>)
 
-    const planetList = planets.map((planet)=> <li className="planet">{planet}</li>)
 
     return (
         <>
