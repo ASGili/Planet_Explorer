@@ -6,7 +6,7 @@ db.planets.insertMany(
 [
  {
    "Planet": "Mercury",
-   "Color": "Grey",
+   "Color": ["Grey"],
    "Mass10e24kg": 0.33,
    "Diameterkm": 4879,
    "Densitykgme3": 5429,
@@ -174,7 +174,7 @@ db.planets.insertMany(
 },
  {
    "Planet": "Neptune",
-   "Color": "Blue",
+   "Color":["Blue"],
    "Mass10e24kg": 102,
    "Diameterkm": 49528,
    "Densitykgme3": 1638,
