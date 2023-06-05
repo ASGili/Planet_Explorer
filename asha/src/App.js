@@ -11,7 +11,7 @@ import PlanetDetail from "./components/PlanetDetail";
 function App() {
   const [planets, setPlanets] = useState([]);
   const [onePlanet, setOnePlanet] = useState([]);
-  // const [planetImages, setPlanetImages] = useState([]);
+  const [planetImages, setPlanetImages] = useState([]);
 
   useEffect(() => {
     PlanetService.getPlanets().then((allPlanets) => {
@@ -19,11 +19,11 @@ function App() {
     });
   }, []);
 
-  // useEffect(() => {
-  //   const lowerCasePlanet = onePlanet.Planet;
-  //   // console.log(typeof lowerCasePlanet)
-  //   getImageNASA(lowerCasePlanet);
-  // }, [onePlanet]);
+  useEffect(() => {
+    const lowerCasePlanet = onePlanet.Planet;
+    // console.log(typeof lowerCasePlanet)
+    getImageNASA(lowerCasePlanet);
+  }, [onePlanet]);
 
   const getOnePlanet = (planetId) => {
     PlanetService.getPlanet(planetId).then((chosenPlanet) =>
@@ -32,13 +32,13 @@ function App() {
   };
 
   //API for numerous images. Currently not using.
-  // const getImageNASA = (planet) => {
-  //   const url = `https://images-api.nasa.gov/search?q=${planet}`;
-  //   fetch(url)
-  //     .then((res) => res.json())
-  //     .then((planetImg) => setPlanetImages(planetImg.collection));
-  //   // console.log(planetImg)
-  // };
+  const getImageNASA = (planet) => {
+    const url = `https://images-api.nasa.gov/search?q=${planet}&media_type=image`;
+    fetch(url)
+      .then((res) => res.json())
+      .then((planetImg) => setPlanetImages(planetImg.collection));
+    // console.log(planetImg)
+  };
 
   // chatGPT suggestion for preventing useEffect running twice. Did not work.
   // const handlePlanetIdChange = (planetId) => {
@@ -53,7 +53,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<HomeInfo />} />
-        <Route path="/planets" element={<PlanetList planets={planets} getOnePlanet={getOnePlanet}/>} />
+        <Route path="/planets" element={<PlanetList planets={planets} getOnePlanet={getOnePlanet} getImageNASA={getImageNASA}/>} />
         <Route path="/selector" element={<PlanetSelector planets={planets} />} />
         <Route
           path="/planets/:planetId"
@@ -61,7 +61,7 @@ function App() {
             <PlanetDetail
               onePlanet={onePlanet}
               getOnePlanet={getOnePlanet}
-            // planetImages={planetImages}
+              planetImages={planetImages}
             // getImageNASA={getImageNASA}
             // onPlanetIdChange={handlePlanetIdChange}
             />

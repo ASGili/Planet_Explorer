@@ -1,13 +1,13 @@
 import { Link, useNavigate } from "react-router-dom"
 
-const IndividualPlanet = ({planet, getOnePlanet}) => {
+const IndividualPlanet = ({planet, getOnePlanet, getImageNASA}) => {
 
     const navigate = useNavigate();
 
     const handleOnClick = () => {
         getOnePlanet(planet._id)
+        getImageNASA(planet.Planet)
         setTimeout(() => {
-    
             navigate(`/planets/${planet._id}`)
         }, 500);
     }
