@@ -9,6 +9,8 @@ const PlanetSelector = ({planets})=> {
 const filteredPlanets = planets.filter((planet) => {
     return(
     planet.Color.includes(colour)
+    &&
+    planet.RingSystem.toString() == ringsValue
     )
 })
 
