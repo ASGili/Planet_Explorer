@@ -1,4 +1,4 @@
-useplanets_db;
+use planets_db;
 
 db.dropDatabase
 
