@@ -31,17 +31,18 @@ const handleRings = (event) => {
     return (
         
         <>
+        <div className="container">
         <h2>Find a Planet!</h2>
         <ul>
-            <li className='filteredPlanets'>
-            </li>
-            {mappedPlanets}
-            <div className="planet"></div>
-
             
+            {mappedPlanets}
+            <image className="planet"></image>
         </ul>
-            <label> 1. What colour does your planet have?</label><br></br>
-        <select className='select' onChange={handleColour}>
+        </div>
+            <div className="centered-dropdown">
+            <label> 1. What colour does your planet have?</label>
+            
+            <select onChange={handleColour}>
             <option value="Default"> Choose Planet Colour</option>
             <option value="Blue">Blue</option>
             <option value="Grey">Grey</option>
@@ -52,8 +53,10 @@ const handleRings = (event) => {
             <option value="Tan">Tan</option>
             <option value="Orange">Orange</option>
             <option value="Golden">Golden</option>
-        </select> <br></br>
+            </select> <br></br>
+            </div>
         <>
+    
         <label>2. Does your planet have rings? </label><br/>
         <form onChange={handleRings}>
         <input type="radio" name="rings" value="true" id="option1"></input>
