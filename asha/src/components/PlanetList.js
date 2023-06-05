@@ -1,11 +1,12 @@
 import IndividualPlanet from "./IndividualPlanet"
 
-const PlanetList = ({planets})=>{
+const PlanetList = ({planets, getOnePlanet})=>{
 
     const planetList = planets.map((planet)=> {
         return <IndividualPlanet 
             key={planet._id}
             planet={planet}
+            getOnePlanet={getOnePlanet}
         />
     } )
 

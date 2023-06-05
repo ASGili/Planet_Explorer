@@ -4,7 +4,7 @@ import PlanetList from "./components/PlanetList";
 import PlanetSelector from "./components/PlanetSelector";
 import PlanetService from "./services/PlanetService";
 import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useParams } from "react-router-dom";
 import "./app.css";
 import PlanetDetail from "./components/PlanetDetail";
 
@@ -26,7 +26,6 @@ function App() {
   // }, [onePlanet]);
 
   const getOnePlanet = (planetId) => {
-    // console.log(planetId)
     PlanetService.getPlanet(planetId).then((chosenPlanet) =>
       setOnePlanet(chosenPlanet)
     );
@@ -54,17 +53,17 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<HomeInfo />} />
-        <Route path="/planets" element={<PlanetList planets={planets} />} />
-        <Route path="/selector" element={<PlanetSelector planets={planets}/>} />
+        <Route path="/planets" element={<PlanetList planets={planets} getOnePlanet={getOnePlanet}/>} />
+        <Route path="/selector" element={<PlanetSelector planets={planets} />} />
         <Route
           path="/planets/:planetId"
           element={
             <PlanetDetail
               onePlanet={onePlanet}
               getOnePlanet={getOnePlanet}
-              // planetImages={planetImages}
-              // getImageNASA={getImageNASA}
-              // onPlanetIdChange={handlePlanetIdChange}
+            // planetImages={planetImages}
+            // getImageNASA={getImageNASA}
+            // onPlanetIdChange={handlePlanetIdChange}
             />
           }
         />

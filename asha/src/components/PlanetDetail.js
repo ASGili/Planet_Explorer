@@ -5,13 +5,13 @@ import getPlanetImg from "../utils";
 const PlanetDetail = ({ onePlanet, getOnePlanet }) => {
   const { planetId } = useParams();
 
-  useEffect(() => {
-    // console.log(planetId)
-    if (onePlanet) {
-      console.log(onePlanet)
-      getOnePlanet(planetId);
-    }
-  }, [planetId]);
+  // useEffect(() => {
+  //   // console.log(planetId)
+  //   console.log("I'm working. UseEffect.", onePlanet)
+  //   if (onePlanet) {
+  //     getOnePlanet(planetId);
+  //   }
+  // }, [planetId]);
 
 
   // useEffect(() => {
