@@ -14,14 +14,23 @@ ul {
 }
 
 li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35vh;
     color: aliceblue;
     padding:10px;
     font-size: 1.5em;
     list-style: none;
+    
+}
+
+a {
+    color: antiquewhite;
 }
 
 body {
-    font-family: monospace;
+font-family: monospace;
 background-color:black;
 background-image:
 radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
@@ -38,6 +47,18 @@ color: aliceblue;
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background-color: #0A4D68;
+    background-color: #3C486B;
 
 }
+
+/* .q1 {
+    text-align: center;
+} */
+
+h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #BACDDB;
+    font-size: 2em;
+} 
