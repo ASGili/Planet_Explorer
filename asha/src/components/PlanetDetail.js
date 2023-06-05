@@ -22,7 +22,7 @@ const PlanetDetail = ({ onePlanet, getOnePlanet }) => {
   return (
     <>
       <h1>{onePlanet.Planet}</h1>
-      <img src={require(`./assets/${onePlanet.Planet}.jpeg`)} />
+      {/* <img src={require(`./assets/${onePlanet.Planet}.jpeg`)} /> */}
       {console.log(`${onePlanet.Planet}.jpeg`)}
       {/* <img src={`${planetImages.items[0].links[0].href}`}/> */}
       {/* {console.log(planetImages.items[0].links[0].href)} */}
