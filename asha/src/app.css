@@ -1,0 +1,13 @@
+ul {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.planetList {
+    display:flex;
+    flex-direction: column;
+}
+
+.planet {
+    padding: 10px;
+}
