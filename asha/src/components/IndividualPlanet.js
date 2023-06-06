@@ -45,12 +45,13 @@ const TextContainer = styled.div`
 const ShowMeMoreButton = styled.button`
   background-color: antiquewhite; /* Green */
   border: none;
+  font-family: monospace;
   color: antiquewhite;
   padding: 5px 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  /* font-size: 16px; */
   margin: 4px 2px;
   transition-duration: 0.4s;
   cursor: pointer;
