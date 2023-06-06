@@ -170,14 +170,13 @@ td {
 }
 
 .footer-element {
-    
     position: fixed;
     margin: 0;
     left: 0;
     bottom: 0;
     width: 100%;
     background-color: #205e61;
-    color: white;
+    color: #BACDDB;
     text-align: center;
 } 
 
