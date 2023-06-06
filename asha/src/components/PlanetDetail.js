@@ -29,21 +29,47 @@ const PlanetDetail = ({ onePlanet, getOnePlanet, planetImages, getImageNASA}) =>
       <img src={getPlanetImg(onePlanet.Planet)} />
       {/* {console.log(`${onePlanet.Planet}.jpeg`)} */}
       {/* {console.log(planetImages.items[0].links[0].href)} */}
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mattis
-        nisi nec urna ultrices, gravida dictum nulla pretium. Suspendisse
-        pharetra quam vitae lobortis pulvinar. Donec non dictum orci. Proin non
-        bibendum nisl. Donec dapibus eu dui porta vehicula. Aliquam egestas
-        consequat turpis eu tempus. Quisque quis euismod ante, et pellentesque
-        tortor. Quisque eget ullamcorper nibh. Curabitur tempor tellus sed augue
-        vestibulum dignissim. Donec at felis lectus. Quisque tristique faucibus
-        cursus. Mauris varius tellus quis odio posuere bibendum. Donec ornare
-        magna vel turpis fringilla blandit. Nam et turpis non quam hendrerit
-        tincidunt et quis ante. Aenean sed est eu eros dapibus posuere.
-      </p>
-      {/* <img src={`${planetImages.items[0].links[0].href}`}/> */}
-      {/* <button onClick={handleOnClick}></button> */}
-      {/* <PlanetImageSlider planetImages={planetImages} /> */}
+        <table>
+            <tbody>
+            <tr>
+                <td>Moons</td>
+                <td>{onePlanet.NumberOfMoons}</td>
+            </tr>
+            <tr>
+                <td>Colours</td>
+                <td>{planetColours}</td>
+            </tr>
+            </tbody>
+        </table>
+        <h3> Other Interesting Facts: </h3>
+        <p>
+            {onePlanet.Planet} is located {onePlanet.DistancefromSun10e6km} million kilometers from the Sun. 
+        </p>
+        <p>
+            It has a mass of {onePlanet.Mass10e24kg} x 10^24 kilograms. The mass indicates the amount of matter it contains. Additionally, it has a diameter of {onePlanet.Diameterkm} kilometers.
+        </p>
+        <p>
+            The density of the planet is {onePlanet.Densitykgme3} kilograms per cubic meter. The surface gravity measures {onePlanet.SurfaceGravitymse2} meters per second squared.
+        </p>
+        <p>
+            The escape velocity, which is {onePlanet.EscapeVelocitykms} kilometers per second, indicates the minimum speed an object needs to escape the planet's gravitational pull. 
+        </p>
+        <p>It takes {onePlanet.RotationPeriodhours} hours for the planet to complete one full rotation, resulting in its day length.</p>
+        <p>
+            The planet's distance from the Sun affects its climate and temperature. With a distance of {onePlanet.DistancefromSun10e6km} million kilometers, it experiences unique environmental conditions.
+        </p>
+        <p>
+            In terms of its orbit around the Sun, the planet takes {onePlanet.OrbitalPerioddays} days to complete one revolution. It moves at an orbital velocity of {onePlanet.OrbitalVelocitykms} kilometers per second. The orbital inclination of {onePlanet.OrbitalInclinationdegrees} degrees describes the angle between its orbital plane and the plane of reference.
+        </p>
+        <p>
+            The planet's orbital eccentricity, which is {onePlanet.OrbitalEccentricity}, indicates the shape of its orbit around the Sun. A value closer to zero represents a more circular orbit. The obliquity to its orbit, at {onePlanet.ObliquityToOrbitdegrees} degrees, describes the tilt of the planet's axis relative to its orbital plane.
+        </p>
+        <p>
+            The mean temperature on the planet is {onePlanet.MeanTemperatureC} degrees Celsius, providing insight into its overall climate. It experiences a surface pressure of {onePlanet.SurfacePressurebars} bars, which affects its atmospheric conditions. 
+        </p>
+        <p>
+            Additionally, the planet {onePlanet.GlobalMagneticField ? "possesses" : "does not possess"} a global magnetic field, which influences its interaction with solar wind and other celestial bodies.
+        </p>
     </>
   );
 };
