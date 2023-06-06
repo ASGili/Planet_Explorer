@@ -6,9 +6,18 @@
 }
 
 .nav-bar > a {
+    background-color: #BDCDD6;
+    border-radius: 50px;
+    padding: 10px 20px;
     font-size: 2em;
+    color: #205e61;
+    text-decoration: none;
 }
-
+.btns:hover {
+    background-color: #205e61;
+    color:#BDCDD6;
+    font-size: 2.5em;
+}
 
 .planetList {
     display:flex;
