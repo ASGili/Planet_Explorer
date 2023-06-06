@@ -111,6 +111,7 @@ const PlanetDetail = ({
       </p>
     </>
     )}
+
     </>
   );
 };
