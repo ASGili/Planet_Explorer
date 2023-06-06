@@ -20,12 +20,13 @@ const mappedPlanets = filteredPlanets.map((planet, index) => {
 })
 
 const handleColour = (event) => {
-setColour(event.target.value)
+    setColour(event.target.value)
 }
 
 const handleRings = (event) => {
-    console.log(event.target.value)
-    setRingsValue(event.target.value)
+    if (event.target.value == "null") {
+        setRingsValue(null)
+    } else setRingsValue(event.target.value)
 }
 
     return (
@@ -36,7 +37,6 @@ const handleRings = (event) => {
         <ul>
             
             {mappedPlanets}
-            {/* <image className="planet"></image> */}
         </ul>
         </div>
             <div className="centered-dropdown">
@@ -61,10 +61,11 @@ const handleRings = (event) => {
         <form onChange={handleRings}>
         <input type="radio" name="rings" value="true" id="option1"></input>
         <label htmlFor="option1">Yes!</label>
-
-    
         <input type="radio" name="rings" value="false" id="option2"></input>
         <label htmlFor="option2">No!</label><br/>
+        <input type="radio" name="rings" value="null" id="option3"></input>
+        <label htmlFor="option3">Unsure</label><br/>
+
         </form>
 
         </>
