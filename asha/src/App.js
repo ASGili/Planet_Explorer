@@ -25,13 +25,22 @@ function App() {
     getImageNASA(lowerCasePlanet);
   }, [onePlanet]);
 
+  const setTheOnePlanet = (planet) => {
+    setOnePlanet(planet);
+  };
+
+  const setOnePlanetById = (planetId) => {
+    const planetToBeSelected = planets.find((planet) => planet._id == planetId);
+    setOnePlanet(planetToBeSelected);
+  };
+
   const getOnePlanet = (planetId) => {
     PlanetService.getPlanet(planetId).then((chosenPlanet) =>
       setOnePlanet(chosenPlanet)
     );
   };
 
-  //API for numerous images. Currently not using.
+  // API for numerous images. Currently not using.
   const getImageNASA = (planet) => {
     const url = `https://images-api.nasa.gov/search?q=${planet}&media_type=image`;
     fetch(url)
@@ -40,14 +49,25 @@ function App() {
     // console.log(planetImg)
   };
 
-
   return (
     <Router>
       <NavBar />
       <Routes>
         <Route path="/" element={<HomeInfo />} />
-        <Route path="/planets" element={<PlanetList planets={planets} getOnePlanet={getOnePlanet} getImageNASA={getImageNASA} />} />
-        <Route path="/selector" element={<PlanetSelector planets={planets} />} />
+        <Route
+          path="/planets"
+          element={
+            <PlanetList
+              planets={planets}
+              setTheOnePlanet={setTheOnePlanet}
+              getImageNASA={getImageNASA}
+            />
+          }
+        />
+        <Route
+          path="/selector"
+          element={<PlanetSelector planets={planets} />}
+        />
         <Route
           path="/planets/:planetId"
           element={
@@ -56,7 +76,7 @@ function App() {
               getOnePlanet={getOnePlanet}
               planetImages={planetImages}
               getImageNASA={getImageNASA}
-            // onPlanetIdChange={handlePlanetIdChange}
+              // onPlanetIdChange={handlePlanetIdChange}
             />
           }
         />
