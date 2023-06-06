@@ -43,11 +43,11 @@ const getPlanetImg = (name) => {
             break;
     
         default:
-            planetImg = earthImage
+            planetImg = null
             break;
     }
 
     return planetImg
 }
 
-export default getPlanetImg
+export default getPlanetImg;

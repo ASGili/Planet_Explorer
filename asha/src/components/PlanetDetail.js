@@ -3,16 +3,14 @@ import { useParams } from "react-router-dom";
 import getPlanetImg from "../utils";
 import PlanetImageSlider from "./PlanetImageSlider";
 
-const PlanetDetail = ({ onePlanet, getOnePlanet, planetImages }) => {
+const PlanetDetail = ({ onePlanet, getOnePlanet, planetImages, getImageNASA}) => {
   const { planetId } = useParams();
 
-  // useEffect(() => {
-  //   // console.log(planetId)
-  //   console.log("I'm working. UseEffect.", onePlanet)
-  //   if (onePlanet) {
-  //     getOnePlanet(planetId);
-  //   }
-  // }, [planetId]);
+  useEffect(() => {
+    if (onePlanet) {
+      getOnePlanet(planetId);
+    }
+  }, []);
 
 
   // useEffect(() => {
@@ -45,7 +43,7 @@ const PlanetDetail = ({ onePlanet, getOnePlanet, planetImages }) => {
       </p>
       {/* <img src={`${planetImages.items[0].links[0].href}`}/> */}
       {/* <button onClick={handleOnClick}></button> */}
-      <PlanetImageSlider planetImages={planetImages} />
+      {/* <PlanetImageSlider planetImages={planetImages} /> */}
     </>
   );
 };

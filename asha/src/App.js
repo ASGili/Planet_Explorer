@@ -46,7 +46,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<HomeInfo />} />
-        <Route path="/planets" element={<PlanetList planets={planets} getOnePlanet={getOnePlanet} getImageNASA={getImageNASA}/>} />
+        <Route path="/planets" element={<PlanetList planets={planets} getOnePlanet={getOnePlanet} getImageNASA={getImageNASA} />} />
         <Route path="/selector" element={<PlanetSelector planets={planets} />} />
         <Route
           path="/planets/:planetId"
@@ -55,7 +55,7 @@ function App() {
               onePlanet={onePlanet}
               getOnePlanet={getOnePlanet}
               planetImages={planetImages}
-            // getImageNASA={getImageNASA}
+              getImageNASA={getImageNASA}
             // onPlanetIdChange={handlePlanetIdChange}
             />
           }
