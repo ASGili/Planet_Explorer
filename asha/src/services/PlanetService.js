@@ -9,19 +9,24 @@ const PlanetService =  {
   getPlanet(id) {
     return fetch(baseURL + id) 
         .then(res => res.json())
-    
+  },
+
+  addPlanet(planet) {
+    return fetch(baseURL, {
+      method: 'POST',
+      body: JSON.stringify(planet),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(res => res.json());
   }
 
-//   addPlanet(planet) {
-//     return fetch(baseURL, {
-//       method: 'POST',
-//       body: JSON.stringify(planet),
-//       headers: {
-//         'Content-Type': 'application/json'
-//       }
-//     })
-//       .then(res => res.json());
-//   },
+//   deletePlanet(id) {
+//     return fetch(baseURL + id, {
+//       method: 'DELETE'
+//     });
+//   }
 
 //   updatePlanet(planet) {
 //     return fetch(baseURL + planet._id, {
@@ -34,11 +39,6 @@ const PlanetService =  {
 //       .then(res => res.json());
 //   },
 
-//   deletePlanet(id) {
-//     return fetch(baseURL + id, {
-//       method: 'DELETE'
-//     });
-//   }
 };
 
 export default PlanetService;
