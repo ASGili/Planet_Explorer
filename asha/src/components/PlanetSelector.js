@@ -47,8 +47,9 @@ const handleMoons = (event) => {
         
         <>
         <div className="container">
-        <h2>Find a Planet!</h2>
-        <ul>
+
+        <ul className="mapped-planets">
+            
             {mappedPlanets}
         </ul>
         </div>
