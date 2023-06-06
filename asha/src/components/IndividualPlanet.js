@@ -1,12 +1,23 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
-const IndividualPlanet = ({planet}) => {
+const IndividualPlanet = ({planet, getOnePlanet, getImageNASA}) => {
+
+    const navigate = useNavigate();
+
+    const handleOnClick = () => {
+        getOnePlanet(planet._id)
+        getImageNASA(planet.Planet)
+        setTimeout(() => {
+            navigate(`/planets/${planet._id}`)
+        }, 500);
+    }
     return (
         <div className="individual-planet-card">
-            <Link to={`/planets/${planet._id}`}><h3>{planet.Planet}</h3></Link>
+            {/* <Link to={`/planets/${planet._id}`}><h3>{planet.Planet}</h3></Link> */}
+            <h3>{planet.Planet}</h3>
             {/* {console.log(planet._id)} */}
             <p>Distance from the Sun (10<sup>6</sup>km): {planet.DistancefromSun10e6km}</p>
-            <button>See More</button>
+            <button onClick={handleOnClick}>See More</button>
         </div>
     )
 }

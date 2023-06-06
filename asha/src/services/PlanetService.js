@@ -8,9 +8,6 @@ const PlanetService =  {
 
   getPlanet(id) {
     return fetch(baseURL + id) 
-        // method: 'GET'
-        // body: JSON.stringify(id),
-        // headers: {'Content-Type': 'application/json'}
         .then(res => res.json())
     
   }
