@@ -30,9 +30,9 @@ const PlanetDetail = ({
     {onePlanet && (
     <>
       {/* {onePlanet ? <h1>{onePlanet.Planet}</h1> : null} */}
-      <h1>{onePlanet.Planet}</h1>
+      <h1 className="planet-name">{onePlanet.Planet}</h1>
       {/* <img src={require(`../assets/${onePlanet.Planet}.jpeg`)} /> */}
-      <img src={getPlanetImg(onePlanet.Planet)} />
+      <img className="planet-image" src={getPlanetImg(onePlanet.Planet)} />
       {/* {console.log(`${onePlanet.Planet}.jpeg`)} */}
       {/* {console.log(planetImages.items[0].links[0].href)} */}
 
@@ -51,9 +51,14 @@ const PlanetDetail = ({
             <td>Ring System: </td>
             <td>{onePlanet.RingSystem ? "Has rings" : "No rings" }</td>
           </tr>
+          <tr>
+            <td>Temperature: </td>
+            <td>{onePlanet.MeanTemperatureC}{"°C"}</td>
+          </tr>
         </tbody>
       </table>
-      <h3> Other Interesting Facts: </h3>
+  
+      <h2 className="other-facts-heading"> Other Interesting Facts: </h2>
       <p>
         {onePlanet.Planet} is located {onePlanet.DistancefromSun10e6km} million
         kilometers from the Sun.
@@ -98,9 +103,7 @@ const PlanetDetail = ({
         describes the tilt of the planet's axis relative to its orbital plane.
       </p>
       <p>
-        The mean temperature on the planet is {onePlanet.MeanTemperatureC}{" "}
-        degrees Celsius, providing insight into its overall climate. It
-        experiences a surface pressure of {onePlanet.SurfacePressurebars} bars,
+        It experiences a surface pressure of {onePlanet.SurfacePressurebars} bars,
         which affects its atmospheric conditions.
       </p>
       <p>

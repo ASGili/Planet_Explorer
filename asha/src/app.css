@@ -3,6 +3,7 @@
     margin: 13px;
     justify-content: space-around;
     padding-left: 0;
+    align-items: center;
 }
 
 .nav-bar > a {
@@ -22,7 +23,7 @@
 .planetList {
     display:flex;
     flex-direction: column;
-    color: antiquewhite;
+    color: #BACDDB;
 }
 
 .planet {
@@ -35,7 +36,7 @@
     justify-content: center;
     /* height: 35vh; */
     height: 100%;
-    color: aliceblue;
+    color: #BACDDB;
     padding:20px;
     margin: 8px;
     font-size: 1.5em;
@@ -57,7 +58,7 @@
 } */
 
 a {
-    color: antiquewhite;
+    color: #205e61;
 }
 
 body {
@@ -70,7 +71,7 @@ radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
 radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
 background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px; 
 background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
-color: aliceblue;
+color: #BACDDB;
 
 }
 
@@ -113,3 +114,30 @@ h2 {
     color: #BACDDB;
     font-size: 2em;
 } 
+
+.planet-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    
+}
+
+.planet-name {
+    font-size: 50px;
+    text-align: center;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 2em;
+}
+
+td {
+    padding-left: 15px;
+}
+
+.other-facts-heading {
+    text-align: left;
+}

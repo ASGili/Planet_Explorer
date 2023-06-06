@@ -43,10 +43,10 @@ const TextContainer = styled.div`
     /* background-color: #efebebeb; */
 `
 const ShowMeMoreButton = styled.button`
-  background-color: antiquewhite; /* Green */
+  background-color: #BDCDD6; /* Green */
   border: none;
   font-family: monospace;
-  color: antiquewhite;
+  color: #205e61;
   padding: 5px 10px;
   text-align: center;
   text-decoration: none;
@@ -55,12 +55,12 @@ const ShowMeMoreButton = styled.button`
   margin: 4px 2px;
   transition-duration: 0.4s;
   cursor: pointer;
-  background-color: transparent; 
-  border: 2px solid antiquewhite;
+  /* background-color: transparent;  */
+  border: 2px solid #BDCDD6;
   border-radius: 25px;
     &:hover {
-    background-color: antiquewhite;
-    color: black;
+    background-color: #205e61;
+    color: #BDCDD6;
     }
 `
 
