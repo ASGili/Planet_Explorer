@@ -30,10 +30,14 @@
     padding: 10px;
 }
 
-.planetSelector {
+.mapped-planets {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0;
+}
+
+.planetSelector {
     /* height: 35vh; */
     height: 100%;
     color: #BACDDB;
@@ -47,9 +51,7 @@
     background-color: red;
     
 }
-.mapped-planets {
-    padding: 5px;
-}
+
 /* .planetSelector {
     border: 5%;
     border-radius: 100%;
@@ -119,7 +121,7 @@ form {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 30%;
+    width: 50%;
     
 }
 
@@ -140,7 +142,7 @@ td {
 
 .other-facts-heading {
     text-align: left;
-    font-size: 3em;
+    font-size: 2em;
 }
 
 .planets-heading {
