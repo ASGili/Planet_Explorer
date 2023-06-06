@@ -59,7 +59,7 @@ function App() {
           element={
             <PlanetList
               planets={planets}
-              setTheOnePlanet={setTheOnePlanet}
+              getOnePlanet={getOnePlanet}
               getImageNASA={getImageNASA}
             />
           }
