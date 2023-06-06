@@ -70,7 +70,7 @@ const IndividualPlanet = ({ planet, getOnePlanet, getImageNASA }) => {
     const navigate = useNavigate();
 
     const handleOnClick = () => {
-        getOnePlanet(planet)
+        getOnePlanet(planet._id)
         getImageNASA(planet.Planet)
         setTimeout(() => {
             navigate(`/planets/${planet._id}`)
