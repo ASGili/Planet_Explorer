@@ -6,7 +6,6 @@ const Container = styled.div`
     display: flex;
     margin: 10px auto;
     width: 90%;
-    /* background-color: #efebebeb; */
     padding: 10px;
     border-radius: 5px;
     flex-direction: row;
@@ -25,10 +24,6 @@ const PlanetName = styled.h3`
     font-size: 25px;
     margin-top: 15px;
     margin-bottom: 0px;
-    /* flex-direction: column;
-    justify-content: space-between; */
-    /* margin-left: 10px; */
-    /* font-size: 1px; */
 `;
 
 const PlanetDistance = styled.p`
@@ -40,10 +35,9 @@ const TextContainer = styled.div`
     flex-direction: column;
     margin: 0 20px 0 20px;
     width: 350px;
-    /* background-color: #efebebeb; */
 `
 const ShowMeMoreButton = styled.button`
-  background-color: #BDCDD6; /* Green */
+  background-color: #BDCDD6;
   border: none;
   font-family: monospace;
   color: #205e61;
@@ -51,11 +45,9 @@ const ShowMeMoreButton = styled.button`
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  /* font-size: 16px; */
   margin: 4px 2px;
   transition-duration: 0.4s;
   cursor: pointer;
-  /* background-color: transparent;  */
   border: 2px solid #BDCDD6;
   border-radius: 25px;
     &:hover {
