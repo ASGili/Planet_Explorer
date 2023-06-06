@@ -4,7 +4,7 @@ const NavBar = () => {
 
     return(
     <header>
-        <ul>
+        <ul className="nav-bar">
             <Link to="/">Home</Link>
             <Link to="/planets">Planet List</Link>
             <Link to="/selector">Planet Selector</Link>

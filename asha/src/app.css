@@ -1,9 +1,14 @@
-ul {
+.nav-bar {
     display: flex;
     margin: 13px;
-    justify-content: center;
+    justify-content: space-around;
     padding-left: 0;
 }
+
+.nav-bar > a {
+    font-size: 2em;
+}
+
 
 .planetList {
     display:flex;
@@ -15,7 +20,7 @@ ul {
     padding: 10px;
 }
 
-li {
+.planetSelector {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -27,15 +32,20 @@ li {
     font-size: 1.5em;
     list-style: none;
     width: 7%;
+    border: 5%;
+    border-radius: 100%;
+    background-color: red;
     
 }
-
-.planetSelector {
+.mapped-planets {
+    padding: 5px;
+}
+/* .planetSelector {
     border: 5%;
     border-radius: 100%;
     background-color: red;
 
-}
+} */
 
 a {
     color: antiquewhite;
@@ -79,7 +89,6 @@ label {
     display: list-item;
     text-align: center;
     
-
 }
 
 form {
