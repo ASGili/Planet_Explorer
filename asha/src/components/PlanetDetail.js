@@ -37,7 +37,7 @@ const PlanetDetail = ({ onePlanet, getOnePlanet, planetImages, getImageNASA}) =>
             </tr>
             <tr>
                 <td>Colours</td>
-                <td>{planetColours}</td>
+                {/* <td>{planetColours}</td> */}
             </tr>
             </tbody>
         </table>
