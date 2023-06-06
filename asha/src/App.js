@@ -31,6 +31,14 @@ function App() {
     );
   };
 
+  const createPlanet = (formOutput) => {
+    PlanetService.addPlanet(formOutput)
+    .then( () => PlanetService.getPlanets()
+    .then((allPlanets) => {setPlanets(allPlanets)})
+    )
+  }
+
+
   // API for numerous images. Currently not using.
   const getImageNASA = (planet) => {
     const url = `https://images-api.nasa.gov/search?q=${planet}&media_type=image`;
@@ -71,7 +79,7 @@ function App() {
           <Route
           path="/custom-planet"
           element={
-            <CreatePlanet/>
+            <CreatePlanet createPlanet={createPlanet}/>
           }
           />
       </Routes>

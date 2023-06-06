@@ -37,7 +37,7 @@ const handleRings = (event) => {
 }
 
 const handleTemp = (event) => {
- settempValue(event.target.value)
+    settempValue(event.target.value)
 }
 const handleMoons = (event) => {
     setMoonValue(event.target.value)
@@ -47,11 +47,9 @@ const handleMoons = (event) => {
         
         <>
         <div className="container">
-
-        <ul className="mapped-planets">
-            
-            {mappedPlanets}
-        </ul>
+            <ul className="mapped-planets">
+                {mappedPlanets}
+            </ul>
         </div>
         <div className="centered-dropdown">
             <label> 1. What colour does your planet have?</label>

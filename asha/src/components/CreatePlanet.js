@@ -1,12 +1,11 @@
 import { useState } from "react"
 
-const CreatePlanet = ()=> {
+const CreatePlanet = ({createPlanet})=> {
 
     const [form, setForm] = useState({})
 
     const handleCreatePlanet = (event) => {
         event.preventDefault()
-        console.log(event.target.create1.value)
         setForm({
             "Planet": event.target.create1.value,
             "Color" : ["default", event.target.create2.value],
@@ -14,6 +13,7 @@ const CreatePlanet = ()=> {
             "MeanTemperatureC" : event.target.create4.value,
             "NumberOfMoons" : event.target.create5.value
         })
+        createPlanet(form)
     }
     
     return (
@@ -22,7 +22,17 @@ const CreatePlanet = ()=> {
                 <label id="create1">Give your planet a name</label>
                 <input id="create1"/>
                 <label id="create2"/>What colour is your planet?<label/>
-                <input id="create2"/>
+                <select id="create2">
+                    <option value=""></option>
+                    <option value="Red">Red</option>
+                    <option value="Green">Green</option>
+                    <option value="Blue">Blue</option>
+                    <option value="Grey">Grey</option>
+                    <option value="Brown">Brown</option>
+                    <option value="White">White</option>
+                    <option value="Tan">Tan</option>
+                    <option value="Golden">Golden</option>
+                </select>
                 <label id="create3"/>Does your planet have rings?<label/>
                 <input id="create3" type="radio" name="hasRings" value="true" />
                 <input id="create3" type="radio" name="hasRings" value="false" />
