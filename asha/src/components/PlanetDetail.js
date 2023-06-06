@@ -14,7 +14,7 @@ const PlanetDetail = ({
   useEffect(() => {
     getOnePlanet(planetId);
   }, []);
-
+  
   // useEffect(() => {
   //     onPlanetIdChange(planetId); // Call the callback function with the planetId
   //   }, [planetId]);
@@ -26,19 +26,30 @@ const PlanetDetail = ({
 
   return (
     <>
-      {onePlanet ? <h1>{onePlanet.Planet}</h1> : null}
+    {/* A conditional check is needed before accessing the properties of the onePlanet object. */}
+    {onePlanet && (
+    <>
+      {/* {onePlanet ? <h1>{onePlanet.Planet}</h1> : null} */}
+      <h1>{onePlanet.Planet}</h1>
       {/* <img src={require(`../assets/${onePlanet.Planet}.jpeg`)} /> */}
       <img src={getPlanetImg(onePlanet.Planet)} />
       {/* {console.log(`${onePlanet.Planet}.jpeg`)} */}
       {/* {console.log(planetImages.items[0].links[0].href)} */}
+
       <table>
         <tbody>
           <tr>
-            <td>Moons</td>
-            <td>{onePlanet.NumberOfMoons}</td>
+            <td>Moons: </td>
+            {onePlanet ? <td>{onePlanet.NumberOfMoons}</td> : null}
           </tr>
           <tr>
-            <td>Colours</td>
+            <td>Colours: </td>
+            <td>{onePlanet.Color?.slice(1).join(", ")}</td>
+            {/* By using the optional chaining operator (?.), we ensure that the properties are accessed only if onePlanet is defined. */}
+          </tr>
+          <tr>
+            <td>Ring System: </td>
+            <td>{onePlanet.RingSystem ? "Has rings" : "No rings" }</td>
           </tr>
         </tbody>
       </table>
@@ -98,6 +109,8 @@ const PlanetDetail = ({
         global magnetic field, which influences its interaction with solar wind
         and other celestial bodies.
       </p>
+    </>
+    )}
     </>
   );
 };
