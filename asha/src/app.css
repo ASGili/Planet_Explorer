@@ -113,3 +113,20 @@ h2 {
     color: #BACDDB;
     font-size: 2em;
 } 
+
+.imageofplanet {
+    animation: rotate 5s infinite linear;
+    /* Adjust the animation duration and timing as needed */
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+        /* Initial rotation angle */
+    }
+
+    100% {
+        transform: rotate(360deg);
+        /* Final rotation angle */
+    }
+}
