@@ -13,10 +13,10 @@ const PlanetList = ({planets, getOnePlanet, getImageNASA})=>{
 
     return (
         <>
-        <h2>The Planets of the Solar System</h2>
+        <h2 className="planets-heading">The Planets of the Solar System</h2>
         
         <ul className="planetList">
-        <image className="planet2"></image>
+        <img className="planet2"/>
         
             {planetList} 
             
