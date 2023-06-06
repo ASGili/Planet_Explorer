@@ -64,6 +64,8 @@ a {
 }
 
 body {
+height: 100%;
+margin: 0%;
 font-family: monospace;
 background-color:black;
 background-image:
@@ -166,3 +168,16 @@ td {
 .other-facts {
     font-size: 1.5em;
 }
+
+.footer-element {
+    
+    position: fixed;
+    margin: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #205e61;
+    color: white;
+    text-align: center;
+} 
+
