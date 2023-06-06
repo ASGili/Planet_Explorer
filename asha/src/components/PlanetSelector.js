@@ -15,7 +15,7 @@ const filteredPlanets = planets.filter((planet) => {
 
 const mappedPlanets = filteredPlanets.map((planet, index) => {
     return(
-    <li key={index}>{planet.Planet}</li>
+    <li className='planetSelector' key={index}>{planet.Planet}</li>
     )
 })
 
@@ -36,7 +36,7 @@ const handleRings = (event) => {
         <ul>
             
             {mappedPlanets}
-            <image className="planet"></image>
+            {/* <image className="planet"></image> */}
         </ul>
         </div>
             <div className="centered-dropdown">
