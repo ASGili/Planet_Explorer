@@ -121,8 +121,21 @@ form {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
-    
+    width: 30%;
+    animation: rotate 120s infinite linear;
+    /* Adjust the animation duration and timing as needed */
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+        /* Initial rotation angle */
+    }
+
+    100% {
+        transform: rotate(360deg);
+        /* Final rotation angle */
+    }
 }
 
 .planet-name {
