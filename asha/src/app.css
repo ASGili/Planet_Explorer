@@ -6,8 +6,80 @@ ul {
 .planetList {
     display:flex;
     flex-direction: column;
+    color: antiquewhite;
 }
 
 .planet {
     padding: 10px;
 }
+
+li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35vh;
+    color: aliceblue;
+    padding:10px;
+    font-size: 1.5em;
+    list-style: none;
+    
+}
+
+a {
+    color: antiquewhite;
+}
+
+body {
+font-family: monospace;
+background-color:black;
+background-image:
+radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px; 
+background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+color: aliceblue;
+
+}
+
+.planet {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #3C486B;
+}
+
+.container {
+    height: 20em
+    
+} 
+
+label {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+} 
+
+.centered-dropdown {
+    height: 5em;
+    margin-left: 2em;
+    display: list-item;
+    text-align: center;
+    
+
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #BACDDB;
+    font-size: 2em;
+} 
