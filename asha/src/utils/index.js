@@ -1,4 +1,4 @@
-import earthImage from '../assets/Earth.jpeg'
+import earthImage from '../assets/Earth-modified.jpeg'
 import jupiterImage from '../assets/Jupiter.jpeg'
 import marsImage from '../assets/Mars.jpeg'
 import mercuryImage from '../assets/Mercury.jpeg'

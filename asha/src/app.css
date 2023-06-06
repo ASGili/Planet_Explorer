@@ -107,7 +107,7 @@ form {
     text-align: center;
 }
 
-h2 {
+.home-headings {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -140,4 +140,14 @@ td {
 
 .other-facts-heading {
     text-align: left;
+    font-size: 3em;
+}
+
+.planets-heading {
+    text-align: center;
+    font-size: 2em;
+}
+
+.other-facts {
+    font-size: 1.5em;
 }
