@@ -6,6 +6,7 @@ import neptuneImage from '../assets/Neptune.png'
 import saturnImage from '../assets/Saturn.png'
 import uranusImage from '../assets/Uranus.png'
 import venusImage from '../assets/Venus.png'
+import customPlanetImage from '../assets/make_a_planet.png'
 
 const getPlanetImg = (name) => {
     let planetImg = ''
@@ -43,7 +44,7 @@ const getPlanetImg = (name) => {
             break;
     
         default:
-            planetImg = null
+            planetImg = customPlanetImage
             break;
     }
 
