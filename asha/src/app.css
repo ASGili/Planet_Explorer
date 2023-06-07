@@ -6,6 +6,9 @@
     src: url('./fonts/opendyslexic/OpenDyslexic-Italic.otf') format('truetype');
 }
 
+header {
+  height: 6em;
+}
 .nav-bar {
     display: flex;
     margin: 13px;
@@ -254,6 +257,7 @@ form {
 
 .planet-image {
     display: block;
+    padding-left: 2%;
     margin-left: auto;
     margin-right: auto;
     width: 30%;
