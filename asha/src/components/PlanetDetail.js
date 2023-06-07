@@ -29,34 +29,37 @@ const PlanetDetail = ({
     {/* A conditional check is needed before accessing the properties of the onePlanet object. */}
     {onePlanet && (
     <>
-      {/* {onePlanet ? <h1>{onePlanet.Planet}</h1> : null} */}
-      <h1 className="planet-name">{onePlanet.Planet}</h1>
-      {/* <img src={require(`../assets/${onePlanet.Planet}.jpeg`)} /> */}
-      <img className="planet-image" src={getPlanetImg(onePlanet.Planet)} />
-      {/* {console.log(`${onePlanet.Planet}.jpeg`)} */}
-      {/* {console.log(planetImages.items[0].links[0].href)} */}
-
-      <table>
-        <tbody>
-          <tr>
-            <td>Moons: </td>
-            {onePlanet ? <td>{onePlanet.NumberOfMoons}</td> : null}
-          </tr>
-          <tr>
-            <td>Colours: </td>
-            <td>{onePlanet.Color?.slice(1).join(", ")}</td>
-            {/* By using the optional chaining operator (?.), we ensure that the properties are accessed only if onePlanet is defined. */}
-          </tr>
-          <tr>
-            <td>Ring System: </td>
-            <td>{onePlanet.RingSystem ? "Has rings" : "No rings" }</td>
-          </tr>
-          <tr>
-            <td>Temperature: </td>
-            <td>{onePlanet.MeanTemperatureC}{"°C"}</td>
-          </tr>
-        </tbody>
-      </table>
+    <h1 className="planet-name">{onePlanet.Planet}</h1>
+    <div className="planet-top-container">
+        {/* {onePlanet ? <h1>{onePlanet.Planet}</h1> : null} */}
+        {/* <img src={require(`../assets/${onePlanet.Planet}.jpeg`)} /> */}
+        <img className="planet-image" src={getPlanetImg(onePlanet.Planet)} />
+        {/* {console.log(`${onePlanet.Planet}.jpeg`)} */}
+        {/* {console.log(planetImages.items[0].links[0].href)} */}
+        <div className="table-container">
+          <table>
+            <tbody>
+              <tr>
+                <td>Moons: </td>
+                {onePlanet ? <td>{onePlanet.NumberOfMoons}</td> : null}
+              </tr>
+              <tr>
+                <td>Colours: </td>
+                <td>{onePlanet.Color?.slice(1).join(", ")}</td>
+                {/* By using the optional chaining operator (?.), we ensure that the properties are accessed only if onePlanet is defined. */}
+              </tr>
+              <tr>
+                <td>Ring System: </td>
+                <td>{onePlanet.RingSystem ? "Has rings" : "No rings" }</td>
+              </tr>
+              <tr>
+                <td>Temperature: </td>
+                <td>{onePlanet.MeanTemperatureC}{"°C"}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
   
     <section className="other-facts">
         <h2 className="other-facts-heading"> Other Interesting Facts: </h2>

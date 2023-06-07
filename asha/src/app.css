@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url('./fonts/opendyslexic/OpenDyslexic-Regular.otf') format('truetype');
+    src: url('./fonts/opendyslexic/OpenDyslexic-Bold.otf') format('truetype');
+    src: url('./fonts/opendyslexic/OpenDyslexic-BoldItalic.otf') format('truetype');
+    src: url('./fonts/opendyslexic/OpenDyslexic-Italic.otf') format('truetype');
+}
+
 .nav-bar {
     display: flex;
     margin: 13px;
@@ -20,53 +28,183 @@
     font-size: 2.5em;
 }
 
+.btns-small {
+    text-decoration: none;
+}
+
+.btns:hover {
+    background-color: #205e61;
+    color:#BDCDD6;
+    font-size: 2.5em;
+}
+
+.main-home-heading {
+    text-align: center;
+    font-weight: bold;
+    font-size: 3em;
+  }
+  
+  .home-headings {
+    text-align: left;
+    color: #BACDDB;
+    font-size: 2em;
+  }
+
 .planetList {
     display:flex;
     flex-direction: column;
     color: #BACDDB;
+}
+article {
+    font-size: 1.25em;
 }
 
 .planet {
     padding: 10px;
 }
 
+.container {
+    padding-left: 5px;
+}
 .mapped-planets {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center;
+    justify-content: center; */
     padding: 0;
 }
 
+.mapped-planets p {
+    color: rgb(209, 6, 6);
+    font-size: 4em;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 0;
+}
+
+
 .planetSelector {
-    /* height: 35vh; */
-    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: #BACDDB;
     padding:20px;
     margin: 8px;
     font-size: 1.5em;
     list-style: none;
-    width: 7%;
-    border: 5%;
-    border-radius: 100%;
-    background-color: red;
-    
+    width: 8vw; /* vw stands for viewport width, and is a % of the vw this makes our planets responsive to the page*/
+    height: 8vw;
+    border-radius: 50%; 
+    /* border radius 50% means that the border radius is equal to half the width and height  */
+    background-color: #205e61;    
 }
 
-/* .planetSelector {
-    border: 5%;
-    border-radius: 100%;
-    background-color: red;
+.planetSelector a {
+    color: #BACDDB;
+    text-decoration: none;
+}
 
-} */
+.planetSelector a:hover {
+    font-size: 1.25em;
+}
+
+/* Questions CSS for Selector */
+.selector-questions-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 1.4em;
+    flex-wrap: wrap;
+    padding-left: 1%;
+  }
+  
+  .planet-colour,
+  .planet-rings,
+  .planet-temperature,
+  .planet-moons {
+    margin-bottom: 2%;
+  }
+  
+  .selector-questions {
+    display: block;
+    text-align: left;
+    }
+  
+  .selector-questions form {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .colour-options {
+    display: block;
+    /* margin-left: 6%; */
+    font-size: 0.5em;
+  }
+  
+  .rings-form {
+    padding: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-right: 25%;
+    font-size: 0.75em;
+  }
+
+  select {
+    font-family: 'OpenDyslexic', sans-serif;
+    color: #205e61;
+    background-color: #BDCDD6;
+  }
+
+  input {
+    font-family: 'OpenDyslexic', sans-serif;
+    color: #205e61;
+    background-color: #BDCDD6;
+  }
+  
+  .planet-temperature input {
+    font-size: 0.75em;
+  }
+  .rings-form input {
+    font-size: 0.75em;
+  }
+
+  .rings-form input label {
+    margin-right: 1%;
+    margin-left: 6%;
+    font-size: 0.75em;
+  }
+
+  .rings-form label {
+    margin-right: 2%;
+  }
+
+  .planet-temperature form label {
+    font-size: 0.75em;
+  }
+  
+  /* .planet-moons input {
+    display: block;*/
+    /* margin-left: 6%; */
+    /*font-size: 0.5em;
+    width: 10%;
+  } */
+
+  .planet-moons input[type="range"] {
+    width: 100%;
+    height: 10%;
+    background-color: #BDCDD6;
+
+  }
+
+/* end of ccs of the questions for selector */
 
 a {
     color: #205e61;
 }
 
+/* our space background */
 body {
-height: 100%;
-margin: 0%;
-font-family: monospace;
+font-family: 'OpenDyslexic', sans-serif;
 background-color:black;
 background-image:
 radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
@@ -86,12 +224,7 @@ color: #BACDDB;
     background-color: #3C486B;
 } */
 
-.container {
-    height: 20em
-    
-} 
-
-label {
+/* label {
     display: flex;
     justify-content: center;
     text-align: center;
@@ -109,15 +242,15 @@ form {
     display: flex;
     justify-content: center;
     text-align: center;
-}
-
-.home-headings {
+} */
+ 
+.planet-top-container {
     display: flex;
-    justify-content: center;
     align-items: center;
-    color: #BACDDB;
-    font-size: 2em;
-} 
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
 
 .planet-image {
     display: block;
@@ -144,6 +277,9 @@ form {
     font-size: 50px;
     text-align: center;
 }
+.table-container {
+    flex: 1
+}
 
 table {
     margin-left: auto;
@@ -162,12 +298,15 @@ td {
 
 .planets-heading {
     text-align: center;
-    font-size: 2em;
+    font-size: 3em;
 }
 
 .other-facts {
-    font-size: 1.5em;
-}
+    font-size: 1em;
+    margin-left: 2%;
+    }
+
+
 #root {
 height: 100%;
 }
@@ -188,4 +327,9 @@ color: #BACDDB;
 text-align: center;
 
 } 
+    
+
+section {
+    margin-left: 2%;
+}
 
