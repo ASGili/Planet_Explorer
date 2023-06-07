@@ -20,13 +20,13 @@ const PlanetService =  {
       }
     })
       .then(res => res.json());
-  }
+  },
 
-//   deletePlanet(id) {
-//     return fetch(baseURL + id, {
-//       method: 'DELETE'
-//     });
-//   }
+  deletePlanet(id) {
+    return fetch(baseURL + id, {
+      method: 'DELETE'
+    });
+  },
 
 //   updatePlanet(planet) {
 //     return fetch(baseURL + planet._id, {
