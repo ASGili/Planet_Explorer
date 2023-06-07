@@ -20,13 +20,29 @@ const CreatePlanet = ({createPlanet})=> {
         })
     }
 
+    const handleValue1 = (event) => {
+        setValue1(event.target.value)
+    }
+    const handleValue2 = (event) => {
+        setValue2(event.target.value)
+    }
+    const handleValue3 = (event) => {
+        setValue3(event.target.value)
+    }
+    const handleValue4 = (event) => {
+        setValue4(event.target.value)
+    }
+    const handleValue5 = (event) => {
+        setValue5(event.target.value)
+    }
+
     return (
         <form onSubmit={handleCreatePlanet}>
             <ul>
-                <label id="create1">What is your planet named?</label>
-                <input value={value1} required id="create1"/>
+                <label  id="create1">What is your planet named?</label>
+                <input onChange={handleValue1} value={value1} required id="create1"/>
                 <label id="create2"/>What colour is your planet?<label/>
-                <select required id="create2">
+                <select onChange={handleValue2} required id="create2">
                     <option value=""></option>
                     <option value="Red">Red</option>
                     <option value="Green">Green</option>
@@ -41,9 +57,9 @@ const CreatePlanet = ({createPlanet})=> {
                 <input required id="create3" type="radio" name="hasRings" value="true" />
                 <input id="create3" type="radio" name="hasRings" value="false" />
                 <label required id="create4"/>What is the average temperature on your planet?<label/>
-                <input value={value4} type="number" min="0" max="1000" id="create4" />
+                <input onChange={handleValue4} value={value4} type="number" min="0" max="1000" id="create4" />
                 <label required id="create5"/>How many moons does your planet have?<label/>
-                <input value={value5} type="number" min="0" max="100" id="create5"/>
+                <input onChange={handleValue5} value={value5} type="number" min="0" max="100" id="create5"/>
             </ul>
             <input type="submit"/>  
         </form>
