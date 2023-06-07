@@ -52,8 +52,12 @@ function App() {
 
   // API for numerous images. Currently not using.
   const getImageNASA = (planet) => {
+    const planetList = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune']
     let url = ''
-    if (planet === 'Mars') {
+    if (planetList.includes(planet) === false ) {
+      url = `https://images-api.nasa.gov/search?q=galaxy&media_type=image`
+    }
+    else if (planet === 'Mars') {
       url = `https://images-api.nasa.gov/search?q=${planet}&media_type=image&year_end=2018`;
     } else {
       url = `https://images-api.nasa.gov/search?q=${planet}&media_type=image`;
