@@ -11,8 +11,8 @@ import Footer from "./components/Footer";
 
 function App() {
   const [planets, setPlanets] = useState([]);
-  const [onePlanet, setOnePlanet] = useState([]);
-  const [planetImages, setPlanetImages] = useState([]);
+  const [onePlanet, setOnePlanet] = useState(null);
+  const [planetImages, setPlanetImages] = useState(null);
 
   useEffect(() => {
     PlanetService.getPlanets().then((allPlanets) => {
@@ -20,11 +20,11 @@ function App() {
     });
   }, []);
 
-  useEffect(() => {
-    const lowerCasePlanet = onePlanet.Planet;
-    // console.log(typeof lowerCasePlanet)
-    getImageNASA(lowerCasePlanet);
-  }, [onePlanet]);
+  // useEffect(() => {
+  //   // const lowerCasePlanet = onePlanet.Planet;
+  //   // console.log(typeof lowerCasePlanet)
+  //   getImageNASA(lowerCasePlanet);
+  // }, []);
 
   const setTheOnePlanet = (planet) => {
     setOnePlanet(planet);

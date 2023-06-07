@@ -31,16 +31,16 @@ const PlanetImageSlider = ({ planetImages }) => {
     //     },
     //   ];
 
-    const slideImages = planetImages.items
+    const slideImages = planetImages?.items
 
     // planetImages.items[0].links[0].href
 
-    console.log(slideImages)
+    // console.log(slideImages)
 
     return (
         <div className="slide-container">
             <Slide>
-                {slideImages.map((slideImage, index) => (
+                {slideImages && slideImages.map((slideImage, index) => (
                     <div key={index}>
                         <div style={{ ...divStyle, 'backgroundImage': `url(${slideImage.links[0].href})` }}>
                             {/* <span style={spanStyle}>{slideImage.caption}</span> */}
