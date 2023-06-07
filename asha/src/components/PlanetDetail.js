@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import getPlanetImg from "../utils";
 import PlanetImageSlider from "./PlanetImageSlider";
+// import morePlanetInfo from "./morePlanetInfo";
 
 const PlanetDetail = ({
     onePlanet,
@@ -55,8 +56,8 @@ const PlanetDetail = ({
           </table>
         </div>
       </div>
-
-                    <section className="other-facts">
+                    {/* <morePlanetInfo getOnePlanet={getOnePlanet} onePlanet={onePlanet}/> */}
+                    {onePlanet.CustomPlanet ? null : <section className="other-facts">
                         <h2 className="other-facts-heading"> Other Interesting Facts: </h2>
                         <p>
                             {onePlanet.Planet} is located {onePlanet.DistancefromSun10e6km} million
@@ -111,7 +112,7 @@ const PlanetDetail = ({
                             global magnetic field, which influences its interaction with solar wind
                             and other celestial bodies.
                         </p>
-                    </section>
+                    </section>} 
                     {planetImages &&
                         <PlanetImageSlider planetImages={planetImages} />}
 
