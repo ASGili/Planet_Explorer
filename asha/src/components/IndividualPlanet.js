@@ -39,7 +39,7 @@ const TextContainer = styled.div`
 const ShowMeMoreButton = styled.button`
   background-color: #BDCDD6;
   border: none;
-  font-family: monospace;
+  font-family: 'OpenDyslexic', sans-serif;
   color: #205e61;
   padding: 5px 10px;
   text-align: center;
@@ -53,6 +53,7 @@ const ShowMeMoreButton = styled.button`
     &:hover {
     background-color: #205e61;
     color: #BDCDD6;
+    font-size: 2.5em;
     }
 `
 
