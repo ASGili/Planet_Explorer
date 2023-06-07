@@ -79,8 +79,8 @@ const IndividualPlanet = ({ planet, getOnePlanet, getImageNASA, deletePlanet }) 
             {/* <Link to={`/planets/${planet._id}`}><h3>{planet.Planet}</h3></Link> */}
             <PlanetImage src={getPlanetImg(planet.Planet)} />
             <TextContainer>
-                <PlanetName>{planet.Planet}{planet.CustomPlanet? <button value={planet._id} onClick={handleClickDeletePlanet}>DELETE</button> : null}</PlanetName>
-                <PlanetDistance>Distance from the Sun (10<sup>6</sup>km): {planet.DistancefromSun10e6km}</PlanetDistance>
+                <PlanetName>{planet.Planet}{planet.CustomPlanet? <button className="btns" value={planet._id} onClick={handleClickDeletePlanet}>Delete</button> : null}</PlanetName>
+                {planet.CustomPlanet ? null : <PlanetDistance>Distance from the Sun (10<sup>6</sup>km): {planet.DistancefromSun10e6km}</PlanetDistance>}
             </TextContainer>
             <ShowMeMoreButton onClick={handleClickShowMore}>Show me more</ShowMeMoreButton>
         </Container>

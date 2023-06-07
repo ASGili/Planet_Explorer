@@ -7,7 +7,7 @@
 }
 
 header {
-  height: 6em;
+  height: 5em;
 }
 .nav-bar {
     display: flex;
@@ -25,6 +25,7 @@ header {
     color: #205e61;
     text-decoration: none;
 }
+
 .btns:hover {
     background-color: #205e61;
     color:#BDCDD6;
@@ -35,10 +36,13 @@ header {
     text-decoration: none;
 }
 
-.btns:hover {
-    background-color: #205e61;
-    color:#BDCDD6;
-    font-size: 2.5em;
+.btns {
+  background-color: #BDCDD6;
+    border-radius: 50px;
+    margin-left: 5%;
+    font-size: 0.5em;
+    color: #205e61;
+    text-decoration: none;
 }
 
 .main-home-heading {
@@ -71,6 +75,7 @@ article {
 }
 .mapped-planets {
     display: flex;
+    flex-wrap: wrap;
     /* align-items: center;
     justify-content: center; */
     padding: 0;
