@@ -8,11 +8,12 @@ import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./app.css";
 import PlanetDetail from "./components/PlanetDetail";
+import Footer from "./components/Footer";
 
 function App() {
   const [planets, setPlanets] = useState([]);
-  const [onePlanet, setOnePlanet] = useState([]);
-  const [planetImages, setPlanetImages] = useState([]);
+  const [onePlanet, setOnePlanet] = useState(null);
+  const [planetImages, setPlanetImages] = useState(null);
 
   useEffect(() => {
     PlanetService.getPlanets().then((allPlanets) => {
@@ -20,10 +21,11 @@ function App() {
     });
   }, []);
 
-  useEffect(() => {
-    const lowerCasePlanet = onePlanet.Planet;
-    getImageNASA(lowerCasePlanet);
-  }, [onePlanet]);
+  // useEffect(() => {
+  //   // const lowerCasePlanet = onePlanet.Planet;
+  //   // console.log(typeof lowerCasePlanet)
+  //   getImageNASA(lowerCasePlanet);
+  // }, []);
 
   const getOnePlanet = (planetId) => {
     PlanetService.getPlanet(planetId).then((chosenPlanet) =>
@@ -83,6 +85,7 @@ function App() {
           }
           />
       </Routes>
+      <Footer className='footer-container'></Footer>
     </Router>
   );
 }

@@ -5,10 +5,10 @@ const NavBar = () => {
     return(
     <header>
         <ul className="nav-bar">
-            <Link to="/" className="btns">Home</Link>
-            <Link to="/planets" className="btns">Planets</Link>
-            <Link to="/selector" className="btns">Find a Planet</Link>
-            <Link to="/custom-planet" className="btns">Create a Planet</Link>
+            <Link to="/" className="btns">HOME</Link>
+            <Link to="/planets" className="btns">PLANETS</Link>
+            <Link to="/selector" className="btns">FIND A PLANET</Link>
+            <Link to="/custom-planet" className="btns">CREATE YOUR OWN PLANET</Link>
         </ul>
     </header>
     )
