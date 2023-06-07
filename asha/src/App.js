@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./app.css";
 import PlanetDetail from "./components/PlanetDetail";
+import Footer from "./components/Footer";
 
 function App() {
   const [planets, setPlanets] = useState([]);
@@ -81,6 +82,7 @@ function App() {
           }
         />
       </Routes>
+      <Footer className='footer-container'></Footer>
     </Router>
   );
 }
