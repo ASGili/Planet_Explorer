@@ -27,11 +27,7 @@ const PlanetDetail = ({
                 <>
                 <h1 className="planet-name">{onePlanet.Planet}</h1>
     <div className="planet-top-container">
-        {/* {onePlanet ? <h1>{onePlanet.Planet}</h1> : null} */}
-        {/* <img src={require(`../assets/${onePlanet.Planet}.jpeg`)} /> */}
         <img className="planet-image" src={getPlanetImg(onePlanet.Planet)} />
-        {/* {console.log(`${onePlanet.Planet}.jpeg`)} */}
-        {/* {console.log(planetImages.items[0].links[0].href)} */}
         <div className="table-container">
           <table>
             <tbody>

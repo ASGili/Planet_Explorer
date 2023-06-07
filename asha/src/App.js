@@ -43,8 +43,6 @@ function App() {
     )
   }
 
-
-  // API for numerous images. Currently not using.
   const getImageNASA = (planet) => {
     const planetList = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune']
     let url = ''
