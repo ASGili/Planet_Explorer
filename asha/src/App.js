@@ -36,15 +36,20 @@ function App() {
 
   const createPlanet = (formOutput) => {
     PlanetService.addPlanet(formOutput)
-    .then( () => PlanetService.getPlanets()
-    .then((allPlanets) => {setPlanets(allPlanets)})
-    )
+      .then(() => PlanetService.getPlanets()
+        .then((allPlanets) => { setPlanets(allPlanets) })
+      )
   }
 
 
   // API for numerous images. Currently not using.
   const getImageNASA = (planet) => {
-    const url = `https://images-api.nasa.gov/search?q=${planet}&media_type=image`;
+    let url = ''
+    if (planet === 'Mars') {
+      url = `https://images-api.nasa.gov/search?q=${planet}&media_type=image&year_end=2018`;
+    } else {
+      url = `https://images-api.nasa.gov/search?q=${planet}&media_type=image`;
+    }
     fetch(url)
       .then((res) => res.json())
       .then((planetImg) => setPlanetImages(planetImg.collection));
@@ -96,3 +101,5 @@ function App() {
 }
 
 export default App;
+
+// https://images-api.nasa.gov/search?q=Mars&media_type=image&year_end=2018
