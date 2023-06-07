@@ -16,7 +16,7 @@ const CreatePlanet = ({createPlanet})=> {
             "Color" : ["Default", value2],
             "RingSystem" : value3,
             "MeanTemperatureC" : value4,
-            "NumberOfMoons" : value5,
+            "NumberOfMoons" : parseInt(value5),
             "CustomPlanet" : "true"
         })}, [value1, value2, value3, value4, value5]
     )

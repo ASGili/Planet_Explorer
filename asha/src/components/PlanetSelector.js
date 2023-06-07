@@ -104,7 +104,7 @@ const handleMoons = (event) => {
           <input
             onChange={handleMoons}
             min="0"
-            max="83"
+            max="100"
             value={moonValue}
             type="range"
             name="moons"
