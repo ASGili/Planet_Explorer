@@ -35,8 +35,10 @@ function App() {
 
   const createPlanet = (formOutput) => {
     PlanetService.addPlanet(formOutput)
-    .then( () => PlanetService.getPlanets()
+    // .then((response)=> )
+    .then(() => PlanetService.getPlanets()
     .then((allPlanets) => {setPlanets(allPlanets)})
+
     )
   }
 
