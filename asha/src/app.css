@@ -217,6 +217,7 @@ radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px
 background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px; 
 background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
 color: #BACDDB;
+margin-bottom: 10px;
 
 }
 
@@ -316,7 +317,7 @@ position: fixed;
 /* height: 100px;
 margin-top: -100px; */
 clear: both;
-margin:0;
+margin-top: 10px;
 /* margin-top: %; */
 left: 0;
 bottom: 0;
@@ -333,4 +334,8 @@ section {
 
 .slide-container {
   margin-bottom: 29px;
+}
+
+html {
+  margin-bottom: 35px;
 }
