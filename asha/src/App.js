@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./app.css";
 import PlanetDetail from "./components/PlanetDetail";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const [planets, setPlanets] = useState([]);
@@ -50,43 +51,47 @@ function App() {
   };
 
   return (
-    <Router>
-      <NavBar />
-      <Routes>
-          <Route path="/" element={<HomeInfo />} />
-          <Route
-            path="/planets"
-            element={
-              <PlanetList
-                planets={planets}
-                getOnePlanet={getOnePlanet}
-                getImageNASA={getImageNASA}
+    <div className="App">
+    
+      <Router>
+        <NavBar />
+        <Routes>
+            <Route path="/" element={<HomeInfo />} />
+            <Route
+              path="/planets"
+              element={
+                <PlanetList
+                  planets={planets}
+                  getOnePlanet={getOnePlanet}
+                  getImageNASA={getImageNASA}
+                />
+            }/>
+            <Route
+              path="/selector"
+              element={<PlanetSelector planets={planets}
               />
-          }/>
-          <Route
-            path="/selector"
-            element={<PlanetSelector planets={planets}
+            }/>
+            <Route
+              path="/planets/:planetId"
+              element={
+                <PlanetDetail
+                  onePlanet={onePlanet}
+                  getOnePlanet={getOnePlanet}
+                  planetImages={planetImages}
+                  getImageNASA={getImageNASA}
+                />
+            }/>
+            <Route
+            path="/custom-planet"
+            element={
+              <CreatePlanet createPlanet={createPlanet}/>
+            }
             />
-          }/>
-          <Route
-            path="/planets/:planetId"
-            element={
-              <PlanetDetail
-                onePlanet={onePlanet}
-                getOnePlanet={getOnePlanet}
-                planetImages={planetImages}
-                getImageNASA={getImageNASA}
-              />
-          }/>
-          <Route
-          path="/custom-planet"
-          element={
-            <CreatePlanet createPlanet={createPlanet}/>
-          }
-          />
-      </Routes>
-      <Footer className='footer-container'></Footer>
-    </Router>
+        </Routes>
+        <Footer className='footer-container'></Footer>
+        <ScrollToTop />
+      </Router>
+    </div>
   );
 }
 
