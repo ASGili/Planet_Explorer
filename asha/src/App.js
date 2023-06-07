@@ -35,15 +35,20 @@ function App() {
 
   const createPlanet = (formOutput) => {
     PlanetService.addPlanet(formOutput)
-    .then( () => PlanetService.getPlanets()
-    .then((allPlanets) => {setPlanets(allPlanets)})
-    )
+      .then(() => PlanetService.getPlanets()
+        .then((allPlanets) => { setPlanets(allPlanets) })
+      )
   }
 
 
   // API for numerous images. Currently not using.
   const getImageNASA = (planet) => {
-    const url = `https://images-api.nasa.gov/search?q=${planet}&media_type=image`;
+    let url = ''
+    if (planet === 'Mars') {
+      url = `https://images-api.nasa.gov/search?q=${planet}&media_type=image&year_end=2018`;
+    } else {
+      url = `https://images-api.nasa.gov/search?q=${planet}&media_type=image`;
+    }
     fetch(url)
       .then((res) => res.json())
       .then((planetImg) => setPlanetImages(planetImg.collection));
@@ -53,37 +58,37 @@ function App() {
     <Router>
       <NavBar />
       <Routes>
-          <Route path="/" element={<HomeInfo />} />
-          <Route
-            path="/planets"
-            element={
-              <PlanetList
-                planets={planets}
-                getOnePlanet={getOnePlanet}
-                getImageNASA={getImageNASA}
-              />
-          }/>
-          <Route
-            path="/selector"
-            element={<PlanetSelector planets={planets}
+        <Route path="/" element={<HomeInfo />} />
+        <Route
+          path="/planets"
+          element={
+            <PlanetList
+              planets={planets}
+              getOnePlanet={getOnePlanet}
+              getImageNASA={getImageNASA}
             />
-          }/>
-          <Route
-            path="/planets/:planetId"
-            element={
-              <PlanetDetail
-                onePlanet={onePlanet}
-                getOnePlanet={getOnePlanet}
-                planetImages={planetImages}
-                getImageNASA={getImageNASA}
-              />
-          }/>
-          <Route
+          } />
+        <Route
+          path="/selector"
+          element={<PlanetSelector planets={planets}
+          />
+          } />
+        <Route
+          path="/planets/:planetId"
+          element={
+            <PlanetDetail
+              onePlanet={onePlanet}
+              getOnePlanet={getOnePlanet}
+              planetImages={planetImages}
+              getImageNASA={getImageNASA}
+            />
+          } />
+        <Route
           path="/custom-planet"
           element={
-            <CreatePlanet createPlanet={createPlanet}/>
+            <CreatePlanet createPlanet={createPlanet} />
           }
-          />
+        />
       </Routes>
       <Footer className='footer-container'></Footer>
     </Router>
@@ -91,3 +96,5 @@ function App() {
 }
 
 export default App;
+
+// https://images-api.nasa.gov/search?q=Mars&media_type=image&year_end=2018
