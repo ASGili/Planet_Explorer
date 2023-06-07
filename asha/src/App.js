@@ -22,12 +22,6 @@ function App() {
     });
   }, []);
 
-  // useEffect(() => {
-  //   // const lowerCasePlanet = onePlanet.Planet;
-  //   // console.log(typeof lowerCasePlanet)
-  //   getImageNASA(lowerCasePlanet);
-  // }, []);
-
   const getOnePlanet = (planetId) => {
     PlanetService.getPlanet(planetId).then((chosenPlanet) =>
       setOnePlanet(chosenPlanet)

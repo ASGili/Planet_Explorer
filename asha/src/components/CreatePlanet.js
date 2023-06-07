@@ -24,6 +24,11 @@ const CreatePlanet = ({createPlanet})=> {
     const handleCreatePlanet = (event) => {
         event.preventDefault()
         createPlanet(formData)
+        setValue1("")
+        setValue2("")
+        setValue3(false)
+        setValue4(0)
+        setValue5(0)
     }
 
     const handleValue1 = (event) => {
@@ -48,7 +53,7 @@ const CreatePlanet = ({createPlanet})=> {
                 <label  id="create1">What is your planet named?</label>
                 <input onChange={handleValue1} value={value1} required id="create1"/>
                 <label id="create2"/>What colour is your planet?<label/>
-                <select onChange={handleValue2} required id="create2">
+                <select value={value2} onChange={handleValue2} required id="create2">
                     <option value=""></option>
                     <option value="Red">Red</option>
                     <option value="Green">Green</option>
@@ -90,7 +95,6 @@ display: flex;
 flex-direction: row;
 width: 30%;
 `
-
 const Submit = styled.input`
 margin-top: 4%;
 `
