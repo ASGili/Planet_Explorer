@@ -58,11 +58,11 @@ const ShowMeMoreButton = styled.button`
 `
 
 
-const IndividualPlanet = ({ planet, getOnePlanet, getImageNASA }) => {
+const IndividualPlanet = ({ planet, getOnePlanet, getImageNASA, deletePlanet }) => {
 
     const navigate = useNavigate();
 
-    const handleOnClick = () => {
+    const handleClickShowMore= () => {
         getOnePlanet(planet._id)
         getImageNASA(planet.Planet)
         setTimeout(() => {
@@ -70,15 +70,19 @@ const IndividualPlanet = ({ planet, getOnePlanet, getImageNASA }) => {
         }, 500);
     }
 
+    const handleClickDeletePlanet = (event) => {
+        deletePlanet(event.target.value)
+    }
+
     return (
         <Container>
             {/* <Link to={`/planets/${planet._id}`}><h3>{planet.Planet}</h3></Link> */}
             <PlanetImage src={getPlanetImg(planet.Planet)} />
             <TextContainer>
-                <PlanetName>{planet.Planet}</PlanetName>
+                <PlanetName>{planet.Planet}{planet.CustomPlanet? <button value={planet._id} onClick={handleClickDeletePlanet}>DELETE</button> : null}</PlanetName>
                 <PlanetDistance>Distance from the Sun (10<sup>6</sup>km): {planet.DistancefromSun10e6km}</PlanetDistance>
             </TextContainer>
-            <ShowMeMoreButton onClick={handleOnClick}>Show me more</ShowMeMoreButton>
+            <ShowMeMoreButton onClick={handleClickShowMore}>Show me more</ShowMeMoreButton>
         </Container>
     )
 }

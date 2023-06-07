@@ -36,9 +36,17 @@ function App() {
 
   const createPlanet = (formOutput) => {
     PlanetService.addPlanet(formOutput)
-      .then(() => PlanetService.getPlanets()
-        .then((allPlanets) => { setPlanets(allPlanets) })
-      )
+    .then((response)=> console.log(response))
+    .then(() => PlanetService.getPlanets()
+    .then((allPlanets) => {setPlanets(allPlanets)})
+    )
+  }
+
+  const deletePlanet = (id) => {
+    PlanetService.deletePlanet(id)
+    .then(() => PlanetService.getPlanets()
+    .then((allPlanets) => {setPlanets(allPlanets)})
+    )
   }
 
 
@@ -69,6 +77,7 @@ function App() {
                   planets={planets}
                   getOnePlanet={getOnePlanet}
                   getImageNASA={getImageNASA}
+                  deletePlanet={deletePlanet}
                 />
             }/>
             <Route
