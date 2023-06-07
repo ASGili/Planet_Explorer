@@ -8,6 +8,7 @@ const NavBar = () => {
             <Link to="/" className="btns">HOME</Link>
             <Link to="/planets" className="btns">PLANETS</Link>
             <Link to="/selector" className="btns">FIND A PLANET</Link>
+            <Link to="/custom-planet" className="btns">CREATE YOUR OWN PLANET</Link>
         </ul>
     </header>
     )

@@ -1,52 +1,51 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const PlanetSelector = ({ planets }) => {
-  const [colour, setColour] = useState("Default");
-  const [ringsValue, setRingsValue] = useState(null);
-  const [tempValue, settempValue] = useState(null);
-  const [moonValue, setMoonValue] = useState(0);
+const PlanetSelector = ({ planets }) => {    
+    const [colour, setColour] = useState("Default")
+    const [ringsValue, setRingsValue] = useState(null)
+    const [tempValue, settempValue] = useState(null)
+    const [moonValue, setMoonValue] = useState(0)
+    
 
-  const filteredPlanets = planets.filter((planet) => {
-    return (
-      planet.Color.includes(colour) &&
-      (ringsValue === null || planet.RingSystem.toString() == ringsValue) &&
-      (tempValue === null ||
-        planet.Planet == tempValue ||
-        (tempValue > 1
-          ? planet.MeanTemperatureC > tempValue
-          : planet.MeanTemperatureC < tempValue)) &&
-      moonValue <= planet.NumberOfMoons
-    );
-  });
+const filteredPlanets = planets.filter((planet) => {
+    return(
+    planet.Color.includes(colour)
+    &&
+    (ringsValue === null || planet.RingSystem.toString() == ringsValue)
+    &&
+    (tempValue === null || planet.Planet == tempValue || (tempValue > 1 ? planet.MeanTemperatureC > tempValue: planet.MeanTemperatureC < tempValue) )
+    &&
+    (moonValue <= planet.NumberOfMoons)
+    )})
 
-  let mappedPlanets = [<p key="no_planets">NO PLANETS LEFT START AGAIN</p>];
-  if (filteredPlanets.length) {
-    mappedPlanets = filteredPlanets.map((planet, index) => {
-      return (
-        <li className="planetSelector" key={index}>
-          <Link to={`/planets/${planet._id}`}>{planet.Planet}</Link>
-        </li>
-      );
-    });
-  }
+let mappedPlanets = [<p key="no_planets">NO PLANETS LEFT START AGAIN</p>];
+    if (filteredPlanets.length) {
+      mappedPlanets = filteredPlanets.map((planet, index) => {
+        return (
+          <li className="planetSelector" key={index}>
+            <Link to={`/planets/${planet._id}`}>{planet.Planet}</Link>
+          </li>
+        );
+      });
+    }
+    
+const handleColour = (event) => {
+    setColour(event.target.value)
+}
 
-  const handleColour = (event) => {
-    setColour(event.target.value);
-  };
-
-  const handleRings = (event) => {
+const handleRings = (event) => {
     if (event.target.value == "null") {
-      setRingsValue(null);
-    } else setRingsValue(event.target.value);
-  };
+        setRingsValue(null)
+    } else setRingsValue(event.target.value)
+}
 
-  const handleTemp = (event) => {
-    settempValue(event.target.value);
-  };
-  const handleMoons = (event) => {
-    setMoonValue(event.target.value);
-  };
+const handleTemp = (event) => {
+    settempValue(event.target.value)
+}
+const handleMoons = (event) => {
+    setMoonValue(event.target.value)
+}
 
   return (
     <>
