@@ -243,7 +243,7 @@ form {
     justify-content: center;
     text-align: center;
 } */
- 
+
 .planet-top-container {
     display: flex;
     align-items: center;
@@ -318,14 +318,14 @@ position: fixed;
 /* height: 100px;
 margin-top: -100px; */
 clear: both;
-margin: 0;
+margin:0;
+/* margin-top: %; */
 left: 0;
 bottom: 0;
 width: 100%;
 background-color: #205e61;
 color: #BACDDB;
 text-align: center;
-
 } 
     
 
@@ -333,3 +333,6 @@ section {
     margin-left: 2%;
 }
 
+.slide-container {
+  margin-bottom: 29px;
+}
