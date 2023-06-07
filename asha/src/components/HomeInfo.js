@@ -1,4 +1,4 @@
-import "./homeInfo.css" 
+
 
 const HomeInfo = () => {
 
