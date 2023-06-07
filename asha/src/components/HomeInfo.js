@@ -3,18 +3,18 @@ import { Link } from "react-router-dom";
 
 const HomeInfo = () => {
     return (
-      <article>
+      <article className="home-page-text">
           <h1 className="main-home-heading">WELCOME TO PLANET EXPLORER</h1>
         
         <section>
           <h2 className="home-headings">How to use our application:</h2>
           <p>Our application is designed to help you explore and learn about different planets in our solar system.</p>
-          <p>Please note that the representations of planet rotations in our app are for illustrative purposes only and may not reflect scientific accuracy.</p>
           
           <ol>
             <li>Visit the <Link to="/planets" className="btns-small">PLANETS</Link> page to learn about the planets in our solar system.</li>
             <li>Visit the <Link to="/selector" className="btns-small">FIND A PLANET</Link> page to interact with the information on planets.</li>
           </ol>
+          <p className="disclaimer">Please note that the representations of planet rotations in our app are for illustrative purposes only and may not reflect scientific accuracy.</p>
         </section>
               
         <section>
