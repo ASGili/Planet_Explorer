@@ -1,4 +1,4 @@
-# Brimful_of_Asha //Working Title
+# Planet Explorer
 Group Project: Angel, Sam, Hanna, Aric.
 
 ## Dataset
