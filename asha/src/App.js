@@ -12,22 +12,26 @@ import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
+  // Define the state variables using the useState hook
   const [planets, setPlanets] = useState([]);
   const [onePlanet, setOnePlanet] = useState(null);
   const [planetImages, setPlanetImages] = useState(null);
 
+  // Fetch all planets when the component mounts using useEffect
   useEffect(() => {
     PlanetService.getPlanets().then((allPlanets) => {
       setPlanets(allPlanets);
     });
   }, []);
 
+  // Function to get information about a specific planet
   const getOnePlanet = (planetId) => {
     PlanetService.getPlanet(planetId).then((chosenPlanet) =>
       setOnePlanet(chosenPlanet)
     );
   };
 
+  // Function to create a new planet
   const createPlanet = (formOutput) => {
     PlanetService.addPlanet(formOutput)
     .then((response)=> console.log(response))
@@ -36,6 +40,7 @@ function App() {
     )
   }
 
+  // Function to delete a planet
   const deletePlanet = (id) => {
     PlanetService.deletePlanet(id)
     .then(() => PlanetService.getPlanets()
@@ -43,6 +48,7 @@ function App() {
     )
   }
 
+  // Function to get NASA images of a planet
   const getImageNASA = (planet) => {
     const planetList = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune']
     let url = ''
