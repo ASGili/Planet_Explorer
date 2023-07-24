@@ -1,12 +1,25 @@
-# Brimful_of_Asha //Working Title
-Group Project: Angel, Sam, Hanna, Aric.
+# PLANET EXPLORER
+Planet Explorer is a web application that allows users to explore information about the various planets in our solar system. The app provides details such as planet names, colors, presence of rings, temperatures, number of moons, and other interesting facts. Users can also see images of the planets from the NASA API, and create a version of their own planet that is saved to the database and can be viewed.
+
+## DEMO
+[Watch a demo of our app here](https://youtu.be/savEO3pklS0)
 
 ## Dataset
 Seeds data comes from https://www.kaggle.com/datasets/iamsouravbanerjee/planet-dataset and pictures come separately.
 
-## Step-by-Step for downloading and running our app on your local machine
+## Contributors
+- [Angel](https://www.linkedin.com/in/angel-gonz%C3%A1lez-camejo/)
+- [Aric](https://www.linkedin.com/in/agilinsky/)
+- [Hanna](https://www.linkedin.com/in/hannadurham/)
+- [Sam](https://www.linkedin.com/in/sambartram/)
+
+## TechStack
+- Front-end: React, JavaScript, HTML, CSS
+- Back-end: Node.js, Express
+- Database: MongoDB
 
 
+## Should you wish to run our app on your local machine, please follow this step-by-step
 Requirements:
 - Node.js and npm (Node Package Manager) should be installed on your machine. You can download them from the official Node.js website: https://nodejs.org.
 
