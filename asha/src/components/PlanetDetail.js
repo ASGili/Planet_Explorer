@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import getPlanetImg from "../utils";
 import PlanetImageSlider from "./PlanetImageSlider";
-// import morePlanetInfo from "./morePlanetInfo";
 
 const PlanetDetail = ({
     onePlanet,
@@ -13,14 +12,16 @@ const PlanetDetail = ({
     const { planetId } = useParams();
 
     useEffect(() => {
-        getOnePlanet(planetId)
+        // Fetch the details of a specific planet based on the planetId parameter
+        getOnePlanet(planetId);
+    
         if (onePlanet && !planetImages) {
-            getImageNASA(onePlanet.Planet)
+          // Fetch NASA images for the planet if they are not already available
+          getImageNASA(onePlanet.Planet);
         }
-    }, [onePlanet, planetImages]);
-
-
-    return (
+      }, [onePlanet, planetImages]);
+    
+      return (
         <>
             {/* A conditional check is needed before accessing the properties of the onePlanet object. */}
             {onePlanet && (
@@ -52,7 +53,8 @@ const PlanetDetail = ({
           </table>
         </div>
       </div>
-                    {/* <morePlanetInfo getOnePlanet={getOnePlanet} onePlanet={onePlanet}/> */}
+                    {/* Additional planet facts */}
+                    {/* Displayed conditionally based on whether it's a custom planet or not */}
                     {onePlanet.CustomPlanet ? null : <section className="other-facts">
                         <h2 className="other-facts-heading"> Other Interesting Facts: </h2>
                         <p>
@@ -108,7 +110,9 @@ const PlanetDetail = ({
                             global magnetic field, which influences its interaction with solar wind
                             and other celestial bodies.
                         </p>
-                    </section>} 
+                    </section>}
+
+                    {/* PlanetImageSlider component */}
                     {planetImages &&
                         <PlanetImageSlider planetImages={planetImages} />}
 

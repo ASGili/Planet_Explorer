@@ -1,12 +1,13 @@
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
-import styled from 'styled-components';
-
-// const ContainerSlider = styled.div`
-//     display: flex`
-
 
 const PlanetImageSlider = ({ planetImages }) => {
+
+    // The PlanetImageSlider component renders a slideshow of planet images using the Slide component from the react-slideshow-image library. 
+    // It receives an array of planetImages as a prop, which is an object with an items property containing the array of images.
+
+    // The component defines CSS styles for the slide container, span, and image div using JavaScript objects. 
+    // These styles are applied to the respective elements using the style attribute.
 
     const slideContainer = {
         display: 'flex',
@@ -45,6 +46,10 @@ const PlanetImageSlider = ({ planetImages }) => {
 
 
     return (
+        // a slide container div is created with the provided styles. 
+        // Within the container, the Slide component is used to iterate over the slideImages array and render each slide. 
+        // Each slide consists of a div with a background image, representing a planet image, and a span displaying a description. 
+        // The background image URL is dynamically set based on the slideImage object from the slideImages array.
         <div style={slideContainer}>
             <div className="slide-container">
                 <Slide>

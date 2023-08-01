@@ -2,6 +2,7 @@ import IndividualPlanet from "./IndividualPlanet"
 
 const PlanetList = ({planets, getOnePlanet, getImageNASA,deletePlanet})=>{
 
+    // Create a list of IndividualPlanet components based on the planets array
     const planetList = planets.map((planet)=> {
         return <IndividualPlanet 
             key={planet._id}
